@@ -1,0 +1,40 @@
+.carousel {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    position: absolute;
+    z-index: 4000;
+    bottom:-30px;
+    &__indicators {
+        position: relative;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 15;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        list-style: none;
+        li {
+            box-sizing: content-box;
+            flex: 0 1 auto;
+            width: 9px;
+            height: 9px;
+            margin-right: 3px;
+            margin-left: 3px;
+            border-radius: 50%;
+            cursor: pointer;
+            background-color: #CFD3DA;
+            background-clip: padding-box;
+            // border-top: 10px solid transparent;
+            // border-bottom: 10px solid transparent;
+            opacity: .3;
+            will-change: transform;
+            transition: opacity .6s ease;
+        }
+        .active {
+            opacity: 1;
+            background-color: var(--orange);
+        }
+    }
+}

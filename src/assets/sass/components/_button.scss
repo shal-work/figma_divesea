@@ -1,0 +1,61 @@
+.btn {
+    display: inline-block;
+    border: 1px solid transparent;
+    background-color: transparent;
+    cursor: pointer;
+    will-change: transform;
+    transition: all 0.2s;
+    border-radius: 0px;
+    padding: 13px 31px;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    max-width: 158px;
+    &-orange {
+        border: 1px solid var(--orange);
+        background-color: var(--orange);
+        border-radius: 0px;
+        &:hover {
+            background-color: var(--orange-dark);
+            border: 1px solid var(--orange-dark);
+            color: var(--white);
+        }
+    }
+    &-serve {
+        background-color: var(--primary60);
+        border: 2px solid var(--white);
+        border-radius: 0px;
+        &:hover {
+            background-color: var(--white);
+            border: 2px solid var(--white);
+            color: var(--primary);
+        }
+    }
+    &-contact {
+        border: 2px solid var(--white);
+        background-color: var(--white);
+        color: var(--primary);
+        border-radius: 0px;
+        &:hover {
+            background-color: var(--contact);
+            border: 2px solid var(--contact);
+            color: var(--white);
+        }
+    }
+    &-divesea {
+        background-color: var(--primary60);
+        border: 2px solid var(--primary60);
+        border-radius: 16px;
+        color: var(--white);
+        font-family: Inter;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 24px;
+        &:hover {
+            background-color: var(--primary60);
+            border: 2px solid var(--primary60);
+            color: var(--primary);
+        }
+    }
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Molenhauer by figma</title>
+    <meta name="descriptin" content="Сайт по макерту Figma">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body class="page">
+
+    @@include('html/blocks/header.html', {
+        'discover-bold': '',
+        'creators-bold': '',
+        'sell-bold': 'menu__bold',
+        'stats-bold': '',
+    })
+    
+    <main class="main">
+        <section class="sell container">
+            <h1 class="visually-hidden">DiveSea web-site for verstaem.online</h1>
+            <h2 class="sell__title">Create Your NFT</h2>
+            <form class="sell__form" action="#" enctype="multipart/form-data" method="POST">
+                <div class="sell__inputs" >
+                    <div class="sell__block">
+                        <label class="sell__label" for="name">Name</label>
+                        <input class="sell__wrap sell__name" type="text" id="name" name="name" placeholder="ArtWork Name" required>
+                    </div>
+                    <div class="sell__block">
+                        <label class="sell__label" for="description">Description</label>
+                        <textarea class="sell__description sell__wrap" type="text" id="description" name="description" 
+                            placeholder="Enter Your Description" required autocomplete="off" minlength="50" maxlength="1000"></textarea>
+                    </div>
+                    <div class="sell__block">
+                        <div class="sell__row">
+                            <div class="sell__column">
+                                <label class="sell__label" for="royalty">Royalty</label>
+                                <select class="sell__royalty sell__wrap" name="royalty" id="royalty">
+                                    <option class="sell__option sell__wrap" value="Royalty" selected>Royalty</option>
+                                    <option class="sell__option sell__wrap" value="Royalty1">10%</option>
+                                    <option class="sell__option sell__wrap" value="Royalty2">20%</option>
+                                </select>
+                            </div>
+                            <div class="sell__column">
+                                <label class="sell__label" for="size">Size</label>
+                                <input class="sell__wrap sell__size" type="text" id="size" name="size" placeholder="Ex - 100 x 100">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sell__block">
+                        <label class="sell__label" for="tags">Tags</label>
+                        <input class="sell__wrap sell__tags" type="text" id="tags" name="tags" placeholder="Beautiful Castle, Monkeys ETC" required>
+                    </div>
+                    <div class="sell__block">
+                        <div class="sell__row">
+                            <div class="sell__column">
+                                <label class="sell__label" for="bid">Your Bid</label>
+                                <div class="sell__action">
+                                    <label class="sell__label-token" for="token"></label>
+                                    <select class="sell__token sell__token-border sell__wrap" name="token" id="token" required>
+                                        <option class="sell__option sell__wrap" value="ETH" selected>ETH</option>
+                                        <option class="sell__option sell__wrap"  value="AAVE">AAVE</option>
+                                        <option class="sell__option sell__wrap"  value="ALGO">ALGO</option>
+                                        <option class="sell__option sell__wrap"  value="AGIX">AGIX</option>
+                                        <option class="sell__option sell__wrap"  value="ANKR">ANKR</option>
+                                    </select>
+                                    <input class="sell__bid sell__bid-border sell__wrap" type="text" id="bid" name="bid-value" placeholder="0.00007 ETC" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+                                </div>
+                            </div>
+                            <div class="sell__column">
+                                <label class="sell__label" for="in">In Stock</label>
+                                <select class="sell__in sell__wrap" name="in-stock" id="in">
+                                    <option class="sell__option sell__wrap" value="001" selected>001</option>
+                                    <option class="sell__option sell__wrap" value="002" selected>002</option>
+                                    <option class="sell__option sell__wrap" value="003" selected>003</option>
+                                    <option class="sell__option sell__wrap" value="004" selected>004</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sell__block">
+                        <label class="sell__label" for="put-on-sale">Put On Sale</label>
+                        <input type="checkbox" class="sell__checkbox sell__wrap" id="put-on-sale" checked/>
+                        <div class="sell__knobs"></div>
+                        <p class="sell__comment">People Will Bids On Your NFT Project</p>
+                    </div>
+                    <div class="sell__block">
+                        <label class="sell__label" for="direct-sale">Direct Sale</label>
+                        <input type="checkbox" class="sell__checkbox sell__wrap" id="direct-sale"/>
+                        <div class="sell__knobs"></div>
+                        <p class="sell__comment">No Bids - Only Direct Salling</p>
+                    </div>
+                    <button class="btn btn-black sell__btn" data-btn="sell" type="submit">Create</button>
+                </div>
+                <div class="sell__upload">
+                    <div class="sell__upload-file">
+                        <img class="sell__upload-photo-hiden" src="data:," alt="Upload Photo" id="img1">
+                        <p class="sell__comment text-center ">PNG, GIF, WEBP, MP4 or MP3. Max 1Gb.</p>
+                        <label>
+                            <input class="sell__upload-input" type='file' id='upload'>
+                        </label>
+                    </div>
+                    <button class="btn btn-black sell__btn sell__uoload" data-btn="upload" type="button">Upload</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    @@include('html/blocks/footer.html')
+    <!-- <a href="#up" class="pageup" data-show="true">
+        <div class="up-icon"></div>
+    </a> -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>

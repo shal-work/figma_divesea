@@ -1,0 +1,32 @@
+.discover {
+    margin-top: 110px;
+    border: 0;
+
+}
+
+.preloader {
+    padding-block: min(176px, max(calc(var(--vw) * 176), 125px));
+    text-align: center;
+    will-change: transform;
+    animation: 1s ease-in-out 2s forwards fame-visible;
+    @media (max-width: 375px) {
+        padding-block: 106px; 
+    }
+    &__size {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+}
+
+@keyframes fame-visible {
+    from {
+        opacity: 0;
+        visibility: visible;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+    }
+}

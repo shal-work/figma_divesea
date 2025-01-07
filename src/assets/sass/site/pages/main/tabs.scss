@@ -1,0 +1,62 @@
+.tab {
+    &__list {
+        display: flex;
+        justify-content: center;
+        column-gap: min(25px, max(var(--vw) * 25, 15px));
+        @media (max-width: 375px) {
+            column-gap: 14px;
+        }
+        @media (max-width: 300px) {
+            flex-direction: column;
+            row-gap: 6px;
+        }
+    }
+    &__content {
+        display: none; //изначально контент будет скрыт
+        padding-top: min(109px, var(--vw) * 109, 77px);
+        padding-bottom: min(103px, var(--vw) * 103, 73px);
+        margin: 0 auto;
+        &--active {
+            display: grid;
+        }
+        &--active50 {
+            display: grid;
+        }
+        @media (max-width: 375px) {
+            padding-inline: 21px;
+            padding-inline: 6vw;
+            padding-inline: min(21px, 6vw, 5px);
+        }
+    }
+    &__btn {
+        padding-block: min(20px, max(calc(var(--vw) * 20), 15px));
+        padding-inline: min(25px, max(calc(var(--vw) * 25), 20px));
+
+        font-weight: 600;
+        font-size:  min(15px, max(calc(var(--vw) * 15), 32px));
+        line-height: min(11px, max(calc(var(--vw) * 11), 16px));
+        font-style: normal;
+        letter-spacing: normal;
+        border-radius: min(18px, max(calc(var(--vw) * 18), 9px));
+
+        background-color: var(--white);
+        border: 2px solid var(--button);
+        color: var(--button);
+        &:hover {
+            background-color: rgba(0,0,0, .1);
+        }
+        &--active {
+            background-color: rgba(0,0,0, .1);
+        }
+        @media (max-width: 767px) {
+            padding-block: 10px;
+            padding-inline: 10px;
+            padding-block: 9px;
+            padding-inline: 8px;
+
+            font-size:  10px;
+            line-height: 15px;
+            letter-spacing:0.14px;
+        }
+    }
+}

@@ -1,0 +1,71 @@
+<section class="first">
+    <div class="first__footer-block">
+        @@include('../blocks/header.html', {
+            'discover-bold': '',
+            'creators-bold': '',
+            'sell-bold': '',
+            'stats-bold': '',
+        })
+    </div>
+    <h1 class="visually-hidden">DiveSea web-site for verstaem.online</h1>
+    <div class="first__content">
+        <div class="first__left">
+            <div class="first__logo">
+                 <img  src="assets/img/logo.png" alt="logo">
+            </div>
+            
+            <div class="first__wallet">
+                <h2 class="first__title">Choose Wallet</h2>
+                <a class="first__btn" href="#">
+                    <img class="first__img" src="assets/img/metamask.png" alt="metamask">
+                    <p class="first__text">Metamask</p>
+                </a>
+                <a class="first__btn" href="#">
+                    <img class="first__img" src="assets/img/trustwallet.png" alt="trustwallet">
+                    <p class="first__text">Trust Wallet</p>
+                </a>
+                <a class="first__btn" href="#" >
+                    <img class="first__img" src="assets/img/ethereum.png" alt="Enter ethereum address">
+                    <p class="first__text">Enter ethereum address</p>
+                </a>
+                <a href="main.html" class="btn first__btn-custom  btn-black text-nobreak text-uppercase">Next</a>
+            </div>
+            <div class="first__footer">
+                <p class="first__footer-item">
+                    Privacy Policy
+                </p>
+                <p class="first__footer-item">
+                    Copyright 2022
+                </p>
+            </div>
+        </div>
+        <div class="first__right illustration">
+            <div class="illustration__inner illustration__size">
+                <div class="illustration__slides">
+                    <div class="illustration__item illustration__size">
+                        <img class="illustration__img illustration__img_1" src="assets/img/rectangle_1.png" alt="rectangle_1">
+                    </div>
+                    <div class="illustration__item illustration__size">
+                        <img class="illustration__img illustration__img_2" src="assets/img/rectangle_2.png" alt="rectangle_2">
+                    </div>
+                    <div class="illustration__item illustration__size">
+                        <img class="illustration__img illustration__img_3" src="assets/img/rectangle_3.png" alt="rectangle_3">
+                    </div>
+                </div>
+            </div>
+            <h3 class="illustration__title">
+                Start Your Own NFT Gallery
+            </h3>
+            <p class="illustration__text">
+                CloseSea Is A Great Platform For Discover Largest NFTs And Other Stuff !!
+            </p>
+            <div class="illustration__btns btn-dual">
+                <button type="button" class="btn btn-spike-prev disabled" data-slide="prev"></button>
+                <button type="button" class="btn btn-spike-next" data-slide="next"></button>
+            </div>
+        </div>
+   </div>
+   <div class="first__footer-block">
+        @@include('../blocks/footer.html')
+    </div>
+</section>

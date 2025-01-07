@@ -1,0 +1,101 @@
+*{
+    // margin: 0; //при верстке по БЭМ нежелательно применять общие сброс стилей в *
+    // padding: 0; //при верстке по БЭМ нежелательно применять общие сброс стилей в *
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+:root {
+    --index: calc(1vw + 1vh);
+    --vw: calc(100vw/1440);
+
+    --container-padding-x: 96px;
+    --container-width:  1920px;
+    --container-width-m:  1440px;
+    
+    --radius-b: 19px;  
+    --radius-m: 12px;  
+    --radius-s: 8px;  
+}
+
+a, a:link, a:visited {
+    text-decoration: none;
+}
+* {
+    // font-family: "Outfit", sans-serif;
+    // font-family: "Public Sans", sans-serif;
+    // font-family: "Inter", sans-serif;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    color: var(--grey);
+}
+
+// прячем прокрутку
+// body {
+//     overflow-y: scroll;
+//     overflow-x: hidden;
+// }
+.page {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0; //при верстке по БЭМ нежелательно применять общие сброс стилей в *
+    background-color: var(--background-light);
+}
+.page.none-scroll {
+    overflow: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    height: 5px;
+    background: transparent;
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #272a3466;
+}
+
+
+.container {
+    max-width: calc(1440px + min(95px, var(--vw) * 95, 68px) * 2);
+	padding-inline: min(95px, max(var(--vw) * 95, 68px));
+    margin-inline: auto; //   = margin: 0 auto;
+    @media (min-width: 1920px) {
+        max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+        padding-inline: var(--container-padding-x);
+        margin-inline: auto; //   = margin: 0 auto;
+    }
+    @media (max-width: 375px) {
+        padding-inline: 5vw;
+    }
+
+}
+
+
+.container-left {
+    max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+    margin-inline: auto; //   = margin: 0 auto;
+    padding-left: calc(var(--container-padding-x));
+    width: 100%;
+    @media (max-width: 1024px) {
+        padding-left: calc(var(--vw)*96);
+        padding-left: clamp(30px, calc(var(--vw) * 90), 96px);
+    }
+    @media (max-width: 767px) {
+        padding-left: 0;
+    }
+}
+
+.reset {
+    margin: 0; //при верстке по БЭМ нежелательно применять общие сброс стилей в *
+    padding: 0; //при верстке по БЭМ нежелательно применять общие сброс стилей в *
+}

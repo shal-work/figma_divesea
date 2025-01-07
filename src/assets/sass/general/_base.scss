@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+:root {
+    --index: calc(1vw + 1vh);
+    --vw: calc(100vw/1440);
+
+    --container-padding-x: 30px;
+    --container-width:  1440px;
+}
+
+a, a:link, a:visited {
+    text-decoration: none;
+}
+* {
+    font-family: "Source Sans 3", sans-serif;
+    font-style: normal;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    color: var(--white);
+    font-size: 18px;
+}
+
+// прячем прокрутку
+body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: var(--grey-light);
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    height: 5px;
+    background: transparent;
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #272a3466;
+}
+
+.container {
+    max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+    // max-width: 1440px;
+    margin-inline: auto; //   = margin: 0 auto;
+    padding-inline: var(--container-padding-x);
+}

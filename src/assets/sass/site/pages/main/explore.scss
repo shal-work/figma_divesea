@@ -1,0 +1,122 @@
+.explore {
+    // max-width: calc(1440px + min(95px, calc(var(--vw) * 95), 68px) * 2);
+    // padding-inline: min(95px, calc(var(--vw) * 95), 68px);
+    padding-bottom: min(246px, calc(var(--vw) * 246), 175px);
+    // margin: 0 auto;
+    border-bottom: 1px solid var(--grey);
+    @media (max-width: 767px) {
+        padding-inline: 5vw;
+        border-bottom: 0;
+    }
+    @media (max-width: 300px) {
+        padding-inline: 5vw;
+    }
+    &__title {
+        padding: 0;
+        margin: 0;
+        font-weight: 600;
+        font-size:  min(45px, max(calc(var(--vw) * 45), 32px));
+        line-height: min(27px, max(calc(var(--vw) * 27), 19px));
+        font-style: normal;
+        letter-spacing: normal;
+        color: var(--title);
+        text-align: center;
+        padding-bottom: min(60px, max(calc(var(--vw) * 60), 45px));
+        @media (max-width: 767px) {
+            font-size:  30px; 
+            line-height: 37.5px;
+            padding-inline: 20px;
+        }
+        @media (max-width: 375px) {
+            font-size:  min(30px, 8vw); 
+            line-height: min(37.5px, 10vw); 
+            padding-inline: 20px;
+        }
+    }
+    &__tabs-list {
+        display: flex;
+        justify-content: center;
+        column-gap: min(25px, max(calc(var(--vw) * 25), 15px));
+        @media (max-width: 375px) {
+            column-gap: 14px;
+        }
+        @media (max-width: 300px) {
+            flex-direction: column;
+            row-gap: 6px;
+        }
+    }
+    &__btn-all {
+        @media (max-width: 767px) {
+            display: none;
+        }
+    }
+    &__btn-category {
+        display: flex;
+        column-gap: min(13px, max(calc(var(--vw) * 13), 6px));
+        &::before {
+            content: '';
+            width: min(16px, max(calc(var(--vw) * 16), 10px));
+            height: min(20px, max(calc(var(--vw) * 20), 13px));
+            background-image: url('./assets/img/category.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: relative;
+            left: 0;
+        }
+    }
+    &__btn-collection {
+        display: flex;
+        column-gap: min(13px, max(calc(var(--vw) * 13), 6px));
+        &::before {
+            content: '';
+            width: min(20px, max(calc(var(--vw) * 20), 13px));
+            aspect-ratio: 1;
+            background-image: url('./assets/img/collection.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: relative;
+            left: 0;
+        }
+    }
+    &__btn-price {
+        display: flex;
+        column-gap: min(13px, max(calc(var(--vw) * 13), 6px));
+        &::before {
+            content: '';
+            width: min(22px, max(calc(var(--vw) * 22), 13px));
+            aspect-ratio: 1;
+            background-image: url('./assets/img/price.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: relative;
+            left: 0;
+        }
+    }
+    &__grid {
+        display: grid;
+        // grid-template-columns: repeat(auto-fill, minmax(clamp(199px, calc(var(--vw) * 281), 282px), 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(clamp(199px, calc(var(--vw) * 281), 282px), 20%));
+        row-gap: min(67px, calc(var(--vw) * 67), 48px);
+        column-gap: min(40px, calc(var(--vw) * 40), 28px);
+        grid-template-rows: auto;
+        // grid-template-rows: repeat(2, 1fr);
+        // grid-auto-rows: 0;
+        // overflow-y: hidden;
+        justify-content: center;
+        @media (max-width: 767px) {
+            grid-template-columns: repeat(auto-fill, minmax(282px, .6fr));
+            // grid-template-columns: repeat(auto-fit, 25%);
+            grid-template-rows: auto;
+            // grid-template-rows: repeat(4, 1fr);
+            // grid-auto-rows: 2;
+            // grid-template-columns: repeat(auto-fill, minmax(251px, 1fr));  
+        }
+        @media (max-width: 375px) {
+            grid-template-columns: repeat(auto-fill, minmax(70vw, 1fr));  
+            overflow-y: auto; 
+        }
+    }
+}

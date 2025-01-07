@@ -1,0 +1,255 @@
+.community {
+	opacity: 0;
+    display: none;
+	flex-direction: column;
+	justify-content: center;
+    align-items: center;
+	position: relative;
+	--orbit-b: min(1061px, max(var(--vw) * 1061, 754px));
+	--orbit-m: min(831px, max(var(--vw) * 831, 590px));
+	
+	overflow-x: hidden;
+
+	padding-bottom: min(261px, max(calc(var(--vw) * 261), 186px));
+	padding-top: min(30px, max(var(--vw) * 30, 20px));
+	
+	@media (max-width: 767px) {
+		padding-bottom: 30vw;
+		--orbit-b: 519px;
+		--orbit-m: 406px;
+	}
+	@media (max-width: 375px) {
+		padding-top: 4vw;
+		--orbit-b: 519px;
+		--orbit-m: 406px;
+	}
+
+	&__grid {
+		display: grid;
+		// display: flex;
+		place-items: center;
+		// min-height: 100vh;
+		margin: 0;
+		overflow: clip;
+		width: var(--orbit-b);
+		height: var(--orbit-b);
+		@media screen {
+			
+		}
+	}
+	&__text {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		width: 597px;
+		width: min(597px, max(calc(var(--vw) * 597), 427px));
+		height: auto;
+		@media (max-width: 767px) {
+			width: 226px;
+		}
+	}
+	&__title {
+		margin: 0;
+		font-weight: 700;
+		font-size: min(45px, max(calc(var(--vw) * 45), 32px));
+		line-height: min(54px, max(calc(var(--vw) * 54), 38px));
+		font-style: normal;
+		letter-spacing: normal;
+		color: var(--title);
+		text-align: center;
+		@media (max-width: 767px) {
+			font-size: 6vw;
+			line-height: 7vw;
+		}
+	}
+
+	&__title-grey {
+		color: var(--grey-light);
+	}
+
+	&__comment {
+		margin: 0;
+		font-weight: 400;
+		font-size: min(18px, max(calc(var(--vw) * 18), 12px));
+		line-height: min(32px, max(calc(var(--vw) * 32), 23px));
+		font-style: normal;
+		letter-spacing: normal;
+		text-align: center;
+		padding-block: 31px 49px;
+		padding-top: min(31px, max(calc(var(--vw) * 31), 22px));
+		padding-bottom: min(49px, max(calc(var(--vw) * 49), 34px));
+		@media (max-width: 767px) {
+			font-size: 8px;
+			line-height: 16px;
+			padding-top: 14px;
+			padding-bottom: 23px;
+		}
+	}
+	&__btn-wrep {
+		display: flex;
+		position: relative;
+	}
+	&__ellipse-out {
+		background: transparent;
+		width: var(--orbit-b);
+		height: var(--orbit-b);
+		border-radius: 50%; 
+		border: 1px solid var(--grey-light);
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&__ellipse-in {
+		background: transparent;
+		width: var(--orbit-m);
+		height: var(--orbit-m);
+		border-radius: 50%; 
+		border: 1px solid var(--grey-light);
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&__rectangle-1 {
+		position: absolute;
+		display: grid;
+		--amplitude: calc(var(--orbit-b) / 2);
+		--x: calc(cos(var(--angle)) * var(--amplitude));
+		--y: calc(sin(var(--angle)) * var(--amplitude));
+		translate: var(--x) var(--y);
+		will-change: transform;
+		animation: revolve1 70s linear infinite;
+	}
+	&__rectangle-2 {
+		position: absolute;
+		display: grid;
+		--amplitude: calc(var(--orbit-b) / 2);
+		--x: calc(cos(var(--angle)) * var(--amplitude));
+		--y: calc(sin(var(--angle)) * var(--amplitude));
+		translate: var(--x) var(--y);
+		will-change: transform;
+		animation: revolve2 85s linear infinite;
+	}
+	&__rectangle-3 {
+		position: absolute;
+		display: grid;
+		--amplitude: calc(var(--orbit-b) / 2);
+		--x: calc(cos(var(--angle)) * var(--amplitude));
+		--y: calc(sin(var(--angle)) * var(--amplitude));
+		translate: var(--x) var(--y);
+		will-change: transform;
+		animation: revolve6 90s linear infinite;
+	}
+	&__rectangle-4 {
+		position: absolute;
+		display: grid;
+		--amplitude: calc(var(--orbit-b) / 2);
+		--x: calc(cos(var(--angle)) * var(--amplitude));
+		--y: calc(sin(var(--angle)) * var(--amplitude));
+		translate: var(--x) var(--y);
+		will-change: transform;
+		animation: revolve4 75s linear infinite;
+	}
+	&__rectangle-5 {
+		position: absolute;
+		display: grid;
+		--amplitude: calc(var(--orbit-b) / 2);
+		--x: calc(cos(var(--angle)) * var(--amplitude));
+		--y: calc(sin(var(--angle)) * var(--amplitude));
+		translate: var(--x) var(--y);
+		will-change: transform;
+		animation: revolve5 80s linear infinite;
+	}
+	&__rectangle-6 {
+		position: absolute;
+		display: grid;
+		--amplitude: calc(var(--orbit-m) / 2);
+		--x: calc(cos(var(--angle)) * var(--amplitude));
+		--y: calc(sin(var(--angle)) * var(--amplitude));
+		translate: var(--x) var(--y);
+		will-change: transform;
+		animation: revolve6 65s 0.5ms linear infinite;
+	}
+	&__rectangle-7 {
+		position: absolute;
+		display: grid;
+		--amplitude: calc(var(--orbit-m) / 2);
+		--x: calc(cos(var(--angle)) * var(--amplitude));
+		--y: calc(sin(var(--angle)) * var(--amplitude));
+		translate: var(--x) var(--y);
+		will-change: transform;
+		animation: revolve7 65s 0.5ms linear infinite;
+	}
+	&__rectangle-8 {
+		position: absolute;
+		display: grid;
+		--amplitude: calc(var(--orbit-m) / 2);
+		--x: calc(cos(var(--angle)) * var(--amplitude));
+		--y: calc(sin(var(--angle)) * var(--amplitude));
+		translate: var(--x) var(--y);
+		will-change: transform;
+		animation: revolve8 65s 0.5ms linear infinite;
+	}
+	&__rectangle-9 {
+		position: absolute;
+		display: grid;
+		--amplitude: calc(var(--orbit-m) / 2);
+		--x: calc(cos(var(--angle)) * var(--amplitude));
+		--y: calc(sin(var(--angle)) * var(--amplitude));
+		translate: var(--x) var(--y);
+		will-change: transform;
+		animation: revolve9 65s 0.5ms linear infinite;
+	}
+	&__icon {
+		width: min(51px, max(var(--vw) * 51, 36px));
+		@media (max-width: 375px) {
+			width: 6.7vw;
+		}
+	}
+}
+
+@property --angle {
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0deg;
+  }
+
+@keyframes revolve1 {
+	from { --angle: -60deg; }
+	to { --angle: 300deg; }
+}
+@keyframes revolve2 {
+	from { --angle: 30deg; }
+	to { --angle: 390deg; }
+}
+@keyframes revolve3 {
+	from { --angle: 90deg; }
+	to { --angle: 450deg; }
+}
+@keyframes revolve4 {
+	from { --angle: 135deg; }
+	to { --angle: 495deg; }
+}
+@keyframes revolve5 {
+	from { --angle: 225deg; }
+	to { --angle: 585deg; }
+}
+@keyframes revolve6 {
+	from { --angle: -75deg; }
+	to { --angle: 285deg; }
+}
+@keyframes revolve7 {
+	from { --angle: 15deg; }
+	to { --angle: 375deg; }
+}
+@keyframes revolve8 {
+	from { --angle: 45deg; }
+	to { --angle: 405deg; }
+}
+@keyframes revolve9 {
+	from { --angle: 200deg; }
+	to { --angle: 560deg; }
+}

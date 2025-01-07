@@ -1,0 +1,68 @@
+<section class="explore container tab">
+    <h2 id="tabs-label" class="explore__title">Explore Marketplace</h2>
+    <div class="tab__list" role="tablist" aria-labelledby="tabs-label" data-tab-explore>
+        <button class="btn explore__btn-all tab__btn tab__btn--active" role="tab" type="button" id="tab-all" aria-controls="all"  aria-selected="true" >All</button>
+        <button class="btn explore__btn-category tab__btn" role="tab" type="button" id="tab-category" aria-controls="category" aria-selected="false" >Category</button>
+        <button class="btn explore__btn-collection tab__btn" role="tab" type="button" id="tab-collection" aria-controls="collection" aria-selected="false" >Collection</button>
+        <button class="btn explore__btn-price tab__btn" role="tab" type="button" id="tab-price" aria-controls="price" aria-selected="false" >Price</button>
+    </div>
+    <div class="tab-content tab__content tab__content--active" role="tabpanel" id="all" aria-labelledby="tab-all" tabindex="0">
+        <div class="explore__grid">
+            @@include('../blocks/card-middle.html',
+                 {'picture': '<img class="card__img" src="assets/img/rectangle_1.png" alt="rectangle_1.png">', 'name': 'Sun-Glass', 'class': 'card-eight'})
+            @@include('../blocks/card-middle.html', 
+                {'picture': '<img class="card__img" src="assets/img/rectangle_2.png" alt="rectangle_2.png">', 'name': 'Sun-Glass', 'class': 'card-eight'})
+            @@include('../blocks/card-middle.html',
+                {'picture': '<img class="card__img" src="assets/img/rectangle_3.png" alt="rectangle_3.png">', 'name': 'Sun-Glass', 'class': 'card-eight'})
+            @@include('../blocks/card-middle.html', 
+                {'picture': '<img class="card__img" src="assets/img/rectangle_4.png" alt="rectangle_4.png">', 'name': 'NuEvey', 'class': 'card-eight'})
+            @@include('../blocks/card-middle.html', 
+                {'picture': '<img class="card__img" src="assets/img/rectangle_5.png" alt="rectangle_5.png">', 'name': 'NuEvey', 'class': 'card-eight'})
+            @@include('../blocks/card-middle.html', 
+                {'picture': '<img class="card__img" src="assets/img/rectangle_1.png" alt="rectangle_1.png">', 'name': 'Sun-Glass', 'class': 'card-eight'})
+            @@include('../blocks/card-middle.html', 
+                {'picture': '<img class="card__img" src="assets/img/rectangle_2.png" alt="rectangle_2.png">', 'name': 'Sun-Glass', 'class': 'card-eight'})
+            @@include('../blocks/card-middle.html', 
+                {'picture': '<img class="card__img" src="assets/img/rectangle_3.png" alt="rectangle_3.png">', 'name': 'Sun-Glass', 'class': 'card-eight'})
+            @@include('../blocks/card-middle.html', 
+                {'picture': '<img class="card__img" src="assets/img/rectangle_4.png" alt="rectangle_4.png">', 'name': 'NuEvey', 'class': 'card-eight'})
+            @@include('../blocks/card-middle.html', 
+                {'picture': '<img class="card__img" src="assets/img/rectangle_5.png" alt="rectangle_5.png">', 'name': 'NuEvey', 'class': 'card-eight'})
+        </div>
+    </div>
+    <div class="tab-content tab__content" aria-labelledby="tab-category" id="category">
+        <div class="explore__grid">
+            @@include('../blocks/card-middle.html',
+                 {'picture': '<img class="card__img" src="assets/img/rectangle_1.png" alt="rectangle_1.png">', 'name': 'Sun-Glass', 'class': 'card-eight'})
+            @@include('../blocks/card-middle.html', 
+                {'picture': '<img class="card__img" src="assets/img/rectangle_2.png" alt="rectangle_2.png">', 'name': 'Sun-Glass', 'class': 'card-eight'})
+        </div>
+    </div>
+    <div class="tab-content tab__content" aria-labelledby="tab-collection" id="collection">
+        <div class="explore__grid">
+            @@include('../blocks/card-middle.html',
+                {'picture': '<img class="card__img" src="assets/img/rectangle_3.png" alt="rectangle_3.png">', 'name': 'Sun-Glass', 'class': 'card-eight'})
+            @@include('../blocks/card-middle.html', 
+                {'picture': '<img class="card__img" src="assets/img/rectangle_4.png" alt="rectangle_4.png">', 'name': 'NuEvey', 'class': 'card-eight'})
+            @@include('../blocks/card-middle.html',
+                {'picture': '<img class="card__img" src="assets/img/rectangle_1.png" alt="rectangle_1.png">', 'name': 'Sun-Glass', 'class': 'card-eight'})
+            @@include('../blocks/card-middle.html', 
+                {'picture': '<img class="card__img" src="assets/img/rectangle_2.png" alt="rectangle_2.png">', 'name': 'Sun-Glass', 'class': 'card-eight'})    
+            @@include('../blocks/card-middle.html',
+                {'picture': '<img class="card__img" src="assets/img/rectangle_3.png" alt="rectangle_3.png">', 'name': 'Sun-Glass', 'class': 'card-eight'})
+            @@include('../blocks/card-middle.html',
+                {'picture': '<img class="card__img" src="assets/img/rectangle_3.png" alt="rectangle_3.png">', 'name': 'Sun-Glass', 'class': 'card-eight'})
+        </div>
+    </div> 
+    <div class="tab-content tab__content" aria-labelledby="tab-price" id="price">
+        <div class="explore__grid">
+            @@include('../blocks/card-middle.html', 
+                {'picture': '<img class="card__img" src="assets/img/rectangle_5.png" alt="rectangle_5.png">', 'name': 'NuEvey', 'class': 'card-eight'})
+            @@include('../blocks/card-middle.html',
+                {'picture': '<img class="card__img" src="assets/img/rectangle_1.png" alt="rectangle_1.png">', 'name': 'Sun-Glass', 'class': 'card-eight'})
+        </div>
+    </div>
+    <a href="discover.html" class="btn-explore">
+        Explore All
+    </a>
+</section>

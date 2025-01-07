@@ -1,0 +1,308 @@
+.btn {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;  
+    justify-content: center;
+    cursor: pointer;
+    will-change: transform;
+    transition: background-color 0.2s;
+    // width: clamp(142px, calc(var(--vw) * 199), 210px);
+    // height: 50px;
+    border-radius: var(--radius-b);
+    font-size: clamp(calc(11rem/18), calc(var(--vw) * 16), 18px);
+    line-height: clamp(calc(11rem/18), calc(var(--vw) * 24), 25px);
+    &-dual {
+        width: 166px;
+        height: 68px;
+        width: clamp(118px, calc(var(--vw) * 166), 170px);
+        height: clamp(49px, calc(var(--vw) * 68), 70px);
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        border-radius: var(--radius-b);
+        background-color: transparent;
+        box-shadow: 0px 20px 30px 3px var(--grey-light50);
+        @media (max-width: 1024px) {
+            border-radius: var(--radius-m);
+        }
+        @media (max-width: 767px) {
+            width: clamp(44.3px, 10vw, 85px);
+            width: min(118px, max(calc(var(--vw) * 118), 88px));
+            height: clamp(36.8px, 8vw, 70px);
+            height: min(49px, max(calc(var(--vw) * 49), 36px));
+        }
+    }
+    &-block {
+        display: flex;
+        border-radius: 16px;
+        overflow: hidden;
+        background-color: transparent;
+        box-shadow: 0px 20px 30px 3px var(--grey-light50);
+        @media (max-width: 375px) {
+            border-radius: 8px;
+        }
+    }
+    &-black {
+        background-color: var(--button);
+        border: 2px solid var(--button);
+        color: var(--white);
+        font-family: Inter;
+        font-weight: 600;
+        &:hover {
+            background-color: var(--grey);
+            border: 2px solid var(--grey);
+            color: var(--white);
+        }
+        @media (max-width: 1024px) {
+            font-size: calc(11rem/18);
+            // width: clamp(120px, calc(var(--vw) * 199), 210px);
+            padding-inline: calc(var(--vw) * 28);
+            border-radius: var(--radius-s);
+        }
+        @media (max-width: 767px) {
+            width: clamp(160px, 21vw, 348px);
+            height: 30px;
+            justify-content: center;
+        }
+        @media (max-width: 375px) {
+            border-radius: 8px;
+        }
+    }
+        
+    &-white {
+        background-color: var(--white);
+        border: 2px solid var(--button);
+        color: var(--button);
+        font-family: Inter;
+        font-weight: 600;
+        &:hover {
+            background-color: var(--grey);
+            border: 2px solid var(--grey);
+            color: var(--white);
+        }
+        @media (max-width: 1024px) {
+            font-size: calc(11rem/18);
+            width: clamp(120px, calc(var(--vw) * 199), 210px);
+            border-radius: 8px;
+        }
+        @media (max-width: 767px) {
+            width: clamp(160px, 21vw, 348px);
+            height: 30px;
+            justify-content: center;
+        }
+    }
+    &-spike-prev {
+        padding: 0;
+        width: 90px;
+        width: 50%;
+        height: 75px;
+        height: 100%;
+        border-radius: 0;
+        background-color: var(--background-light);
+        display: flex;
+        align-items: center;
+        border: 0px;
+        &::after {
+            content: '\e8bf';
+            font-family: eicons;
+            top: 1px;
+            left: 0;
+            position: relative;
+            will-change: transform;
+            transition: transform 200ms;
+            transform: scale(1);
+            will-change: transform;
+        }
+        &:hover::after {
+            transform: scale(1.5);
+        }
+    }
+
+    &-spike-next {
+        padding: 0;
+        width: 90px;
+        width: 50%;
+        height: 75px;
+        height: 100%;
+        border-radius: 0;
+        background-color: var(--background-light);
+        display: flex;
+        align-items: center;
+        border: 0;
+        &::after {
+            content: '\e8c0';
+            font-family: eicons;
+            top: 1px;
+            left: 0;
+            position: relative;
+            transition: transform 200ms;
+            transform: scale(1);
+            will-change: transform;
+        }
+        &:hover::after {
+            transform: scale(1.5);
+        }
+        &::before {
+            content: '';
+            border-right: 2px solid var(--grey-light);
+            left: -1px;
+            position: absolute;
+            height: 50%;
+            height: 38%;
+        }
+    }
+    &-card {
+        margin: 0;
+        background-color: var(--button);
+        border: 0px solid var(--button);
+        color: var(--white);
+        font-family: Inter;
+        padding-block: min(15px, max(calc(var(--vw) * 15), 10px));
+        padding-inline: min(24px, max(calc(var(--vw) * 24), 18px));
+        width: auto;
+
+        font-weight: 600;
+        font-size: 10px;
+
+        font-size: min(14px, max(calc(var(--vw) * 14), 10px));
+
+        line-height: min(21px, max(calc(var(--vw) * 21), 15px));
+        // line-height: clamp(15px, calc(var(--vw) * 21), 22px);
+        letter-spacing: 0.12px;
+        letter-spacing: min(0.12px, max(calc(var(--vw) * 0.12), 0.08px));
+        color: var(--grey-light);
+
+        border-radius: min(12px, max(calc(var(--vw) * 12), 8px));
+        height: auto;
+    }
+    &-card-person {
+        font-size: min(12px, max(calc(var(--vw) * 12), 9px));
+        padding-block: min(11px, max(calc(var(--vw) * 11), 7px));
+        padding-inline: min(18px, max(calc(var(--vw) * 18), 12px));
+        @media (max-width: 767px) {
+            font-size: min(7px, 1vw);
+            font-size: 7px;
+            line-height: 11px;
+            padding-block: 10px;
+            padding-block: min(10px, 2vw);
+            padding-inline: min(13px, 1.7vw);
+            padding-inline: min(14px, max(4vw, 6px));
+            border-radius: 6px; 
+        }
+    }
+    &-explore {
+        margin: 0;
+        padding: 0;
+        display: block;
+        font-weight: 500;
+        font-size: min(18px, max(calc(var(--vw) * 18), 13px));
+        font-style: normal;
+        line-height: min(39px, max(calc(var(--vw) * 39), 28px));
+        letter-spacing: -0.09px;
+        text-align: right;
+        color: var(--grey-light);
+        will-change: transform;
+        transition: all .5s ease;
+        &::after {
+            content: '\e8c0';
+            font-family: eicons;
+            color: var(--grey-light);
+            left: 0px;
+            position: relative;
+            will-change: transform;
+            transition: left .2s ease;
+        }
+        &:hover::after {
+            left: 10px;
+            cursor: pointer;
+            position: relative;
+        }
+        @media (max-width: 375px) {
+            text-align: center;
+        }
+    }
+    &-unleash, &-community {
+        padding-block: 18px;
+        padding-inline: 18px;
+        padding-block: min(18px, max(var(--vw)* 18, 14px));
+        padding-inline: min(20px, max(var(--vw)* 20, 14px));
+        font-weight: 500;
+        font-size: min(14px, max(calc(var(--vw) * 15), 11px));
+        line-height: min(18px, max(calc(var(--vw) * 18), 13px));
+        font-style: normal;
+        letter-spacing: normal;
+        color: var(--white);
+        position: relative;
+        border-radius: 12px;
+        &::after {
+            content: '\e8c0';
+            font-family: eicons;
+            color: var(--white);
+            left: 6px;
+            position: relative;
+            will-change: transform;
+            transition: left .2s ease;
+        }
+        &:hover::after {
+            left: 10px;
+            cursor: pointer;
+            position: relative;
+        }
+        @media (max-width: 767px) {
+            width: auto;
+            height: auto;
+            padding-inline: 18px;
+            padding-block: 20px;
+            padding-inline: 36px;
+            font-size: 11px;
+            line-height: 14px;
+        }
+        @media (max-width: 375px) {
+            padding-block: 10px;
+            padding-inline: 17px;
+            font-size: min(14px, max(10px, calc(var(--vw) * 14)));
+            line-height: min(21px, max(15px, calc(var(--vw) * 21)));
+        }
+    }
+    &-community {
+
+        &::after {
+            content: '';
+        }
+        @media (max-width: 767px) {
+            // padding-block: 10px;
+            padding-block: 1.4vw;
+            // padding-inline: 17px;
+            padding-inline: 2.2vw;
+            font-size: min(14px, max(10px, calc(var(--vw) * 14)));
+            line-height: min(21px, max(15px, calc(var(--vw) * 21)));
+        }
+        @media (max-width: 375px) {
+            font-size: 7px;
+            line-height: 9px;
+        }
+
+    }
+	&-product {
+		width: auto;
+		height: auto;
+		font-size: min(18px, max(var(--vw) * 18, 13px));
+		line-height: min(28px, max(var(--vw) * 28, 20px));
+		font-weight: 700;
+		padding-block: min(33px, max(var(--vw) * 33, 19px));
+		padding-inline: min(57px, max(var(--vw) * 57, 19px));
+		&::before {
+			content: '';
+			background-image: url('./assets/img/wallet.png');
+			width: 22px;
+			height: 22px;
+			margin-right: 20px;
+		}
+		@media (max-width: 767px) {
+			margin-top: min(46px, max(14vw, 20px));
+			padding-block: min(19px, max(6vw, 10px));
+		}
+	}
+
+}

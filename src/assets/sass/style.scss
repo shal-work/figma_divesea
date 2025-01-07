@@ -1,0 +1,49 @@
+@use 'site/components/button-site';
+
+@use 'site/general/base-site';
+@use 'site/general/typography-site';
+@use 'site/general/variables-site';
+
+@use 'site/helpers/text-transform-site';
+@use 'site/helpers/margin-site';
+@use 'site/helpers/align-site';
+
+@use './_main.scss';
+@use 'site/bloks/header';
+@use 'site/bloks/footer';
+@use 'site/bloks/card';
+@use 'site/bloks/modal';
+@use 'site/pages/first/first';
+@use 'site/pages/main/hero';
+
+@use 'site/pages/main/weekly';
+
+@use 'site/pages/main/collection';
+@use 'site/pages/main/explore';
+@use 'site/pages/main/unleash';
+@use 'site/pages/main/community';
+@use 'site/pages/main/questions';
+@use 'site/pages/main/banner';
+@use 'site/pages/main/tabs';
+@use 'site/pages/discover/discover';
+@use 'site/pages/discover-product/discover-product';
+@use 'site/bloks/popup';
+@use 'site/pages/person/person';
+@use 'site/pages/sell/sell';
+@use 'site/pages/stats/stats';
+@use 'site/pages/creators/creators';
+
+
+
+
+
+// .fadeOut {
+.fadeOut {
+    opacity: 0;
+}
+.fadeIn {
+    opacity: 1;
+}
+input[type=radio] {
+    display: none;
+}

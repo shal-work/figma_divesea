@@ -1,0 +1,54 @@
+<div class="popup popup-in">
+    <h3 class="popup__title popup-in__title">History of Bid</h3>
+    <p class="popup__date popup-in__date">Oct 14, 2022</p>
+    <div class="popup__column">
+        <div class="popup__row">
+            <div class="popup__block">
+                <div class="thumbnail">
+                    <img class="thumbnail__icon" src="assets/img/rectangle_1.png" alt="rectangle_1.png">
+                    <div class="popup__check"></div>
+                </div>
+                <div class="user">
+                    <p class="user-name popup-in__name">Repo</p>
+                    <p class="user-date popup-in__date">May 17, 2022 at 12:08</p>
+                </div>
+            </div>
+            <div class="popup__vector">
+                <p class="action-vector popup__vector">1.75</p>
+            </div>
+        </div>
+        <div class="popup__row">
+            <div class="popup__block">
+                <div class="thumbnail">
+                    <img class="thumbnail__icon" src="assets/img/rectangle_1.png" alt="rectangle_1.png">
+                    <div class="popup__check"></div>
+                </div>
+                <div class="user">
+                    <p class="user-name">Travo</p>
+                    <p class="user-date popup-in__date">May 16, 2022 at 12:08</p>
+                </div>
+            </div>
+            <div class="popup__vector">
+                <p class="action-vector popup__vector">1.57</p>
+            </div>
+        </div>
+    </div>
+    
+    <form action="#" class="popup__form">
+        <fieldset class="popup__fieldset">
+            <label class="popup__title popup-in__title" for="bid-in">Your Bid</label>
+            <div class="popup__action">
+                <select class="popup__token" name="token" required>
+                    <option class="popup__option" value="" selected>ETH -in</option>
+                    <option class="popup__option"  value="AAVE">AAVE</option>
+                    <option class="popup__option"  value="ALGO">ALGO</option>
+                    <option class="popup__option"  value="AGIX">AGIX</option>
+                    <option class="popup__option"  value="ANKR">ANKR</option>
+                </select>
+                <input class="popup__bid" type="text" id="bid-in" name="bid-value" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+            </div>
+            <button class="btn btn-black btn-product popup__btn popup-in__btn" data-btn="popup-in" type="submit">Submit</button>
+        </fieldset>
+    </form>
+</div>
+

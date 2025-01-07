@@ -1,0 +1,391 @@
+.sell {
+
+    padding-top: 155px;
+    padding-top: min(155px, max(var(--vw) * 155, calc(100vw * 110 / 1024)));
+    padding-bottom: min(210px, max(var(--vw) * 210, calc(100vw * 149 / 1024)));
+    padding-left: min(96px, max(var(--vw) * 96, calc(100vw * 68 / 1024)));
+    padding-right: min(105px, max(var(--vw) * 105, calc(100vw * 74 / 1024)));
+    &__title {
+        font-weight: 600;
+        font-size: min(45px, max(var(--vw) * 45, calc(100vw * 32 / 1024)));
+        line-height: min(30px, max(var(--vw) * 30, 21px));
+        color: var(--title);
+        text-align: center;
+        @media (max-width: 767px) {
+            display: none;
+        }
+    }
+    &__form {
+        display: flex;
+        column-gap: min(69px, max(var(--vw) * 69, calc(100vw * 49 / 1024)));
+        margin-top: 153px;
+        @media (max-width: 767px) {
+            margin-top: 0px;
+            flex-direction: column-reverse;
+            align-items: center;
+            row-gap: calc(100vw * 91 / 375);
+        }
+    }
+    &__inputs {
+        display: flex;
+        flex-direction: column;
+        row-gap: min(35px, max(var(--vw) * 35, calc(100vw * 35 / 1024)));
+        width: 56.5%;
+        @media (max-width: 767px) {
+            width: 100%;
+        }
+    }
+    &__description {
+        height: min(165px, max(var(--vw) * 165, calc(100vw * 117 / 1024)));
+        background-image: url("./assets/img/edit.png");
+        background-repeat: no-repeat;
+        background-position: right 4.3% top 18.5%;
+        background-size: 1.5em auto;
+        @media (max-width: 767px) {
+            background-position: right 3.3% top 25.5%; 
+            height: 106px;
+        }
+    }
+    &__name {
+        background-image: url("./assets/img/edit.png");
+        background-repeat: no-repeat;
+        background-position: right 4.3% top 44.5%;
+        background-size: 1.5em auto;
+        @media (max-width: 767px) {
+            background-position: right 3.3% top 44.5%; 
+        }
+    }
+    &__tags {
+        border: 1px solid var(--grey-light50);
+        background-image: url("./assets/img/edit.png");
+        background-repeat: no-repeat;
+        background-position: right 4.3% top 44.5%;
+        background-size: 1.5em auto;
+        @media (max-width: 767px) {
+            background-position: right 3.3% top 44.5%; 
+        }
+    }
+    &__block {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    &__label {
+        font-weight: 500;
+        font-size: min(20px, max(var(--vw) * 20, calc(100vw * 14 / 1024)));
+        line-height: min(25px, max(var(--vw) * 25, calc(100vw * 18 / 1024)));
+        color: var(--title);
+        padding-bottom: min(20px, max(var(--vw) * 20, calc(100vw * 14 / 1024)));
+        @media (max-width: 767px) {
+            font-size: 13px;
+            line-height: 16px;
+        }
+    }
+    &__wrap {
+        border-radius: min(11px, max(var(--vw) * 11, calc(100vw * 7 / 1024)));
+        font-weight: 400;
+        font-size: min(14px, max(var(--vw) * 14, calc(100vw * 10 / 1024)));
+        line-height: min(17px, max(var(--vw) * 17, calc(100vw * 12 / 1024)));
+        color: var(--grey);
+        padding-block: min(23px, max(var(--vw) * 23, calc(100vw * 16 / 1024)));
+        padding-inline: min(26px, max(var(--vw) * 26, calc(100vw * 18 / 1024)));
+        border: 0;
+        background-color: var(--grey-light50);
+        @media (max-width: 767px) {
+            font-size: 8px;
+            line-height: 13px;
+            border-radius: 7px;
+        }
+    }
+
+    &__row {
+        display: flex;
+        column-gap: min(35px, max(var(--vw) * 35, calc(100vw * 25 / 1024)));
+        @media (max-width: 320px) {
+            flex-direction: column;
+            row-gap: 16px;
+        }
+    }
+    &__column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__royalty {
+        width: min(146px, max(var(--vw) * 146, calc(100vw * 104 / 1024)));
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23676767' viewBox='0 0 16 16'%3E%3Cpath d='M11.9026 1.31632C11.903 1.43561 11.8767 1.55348 11.8256 1.66126C11.7744 1.76904 11.6998 1.864 11.6072 1.93915L6.81619 5.79589C6.67331 5.91333 6.49409 5.97754 6.30914 5.97754C6.12419 5.97754 5.94497 5.91333 5.8021 5.79589L1.01112 1.80341C0.848049 1.66787 0.745502 1.47311 0.726035 1.26196C0.706568 1.05082 0.771775 0.840591 0.90731 0.677525C1.04285 0.514458 1.23761 0.411912 1.44875 0.392445C1.6599 0.372978 1.87012 0.438184 2.03319 0.57372L6.31314 4.143L10.5931 0.693495C10.7103 0.595852 10.853 0.533827 11.0044 0.514759C11.1557 0.495691 11.3094 0.520379 11.4471 0.5859C11.5849 0.651421 11.701 0.755034 11.7817 0.884479C11.8624 1.01392 11.9044 1.16378 11.9026 1.31632Z'%3E%3C/path%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 27% top 57%;
+        background-size: 1em auto;
+        cursor: pointer;
+        @media (max-width: 767px) {
+            width: 94px;
+        }
+    }
+    &__action {
+        display: flex;
+        position: relative;
+        &::before {
+            content: '';
+            border-right: 2px solid var(--grey-light);
+            left: 19%;
+            top: 25%;
+            position: absolute;
+            height: 50%;
+            z-index: 10;
+            @media (max-width: 767px) {
+                left: 52px;
+            }  
+        }
+    }
+    &__token {
+        // height: min(59px, max(var(--vw) * 59, calc(100vw * 44 / 1024)));
+        border-radius: 0;
+        border-top-left-radius: min(11px, max(var(--vw) * 11, calc(100vw * 7 / 1024)));
+        border-bottom-left-radius: min(11px, max(var(--vw) * 11, calc(100vw * 7 / 1024)));
+        border: 0;
+        background-color: var(--grey-light50);
+        width: min(96px, max(var(--vw) * 96, calc(100vw * 68 / 1024)));
+
+        border-top-left-radius: min(15px, max(var(--vw)* 15, 9px));
+        border-bottom-left-radius: min(15px, max(var(--vw)* 15, 9px));
+        appearance: none;
+        position: relative;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23676767' viewBox='0 0 16 16'%3E%3Cpath d='M11.9026 1.31632C11.903 1.43561 11.8767 1.55348 11.8256 1.66126C11.7744 1.76904 11.6998 1.864 11.6072 1.93915L6.81619 5.79589C6.67331 5.91333 6.49409 5.97754 6.30914 5.97754C6.12419 5.97754 5.94497 5.91333 5.8021 5.79589L1.01112 1.80341C0.848049 1.66787 0.745502 1.47311 0.726035 1.26196C0.706568 1.05082 0.771775 0.840591 0.90731 0.677525C1.04285 0.514458 1.23761 0.411912 1.44875 0.392445C1.6599 0.372978 1.87012 0.438184 2.03319 0.57372L6.31314 4.143L10.5931 0.693495C10.7103 0.595852 10.853 0.533827 11.0044 0.514759C11.1557 0.495691 11.3094 0.520379 11.4471 0.5859C11.5849 0.651421 11.701 0.755034 11.7817 0.884479C11.8624 1.01392 11.9044 1.16378 11.9026 1.31632Z'%3E%3C/path%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12% top 57%;
+        background-size: 1em auto;
+        cursor: pointer;
+        @media (max-width: 767px) {
+            width: 62px;
+            background-position: right 13px top 57%;
+        }  
+    }
+
+    &__bid {
+        border-radius: 0;
+        border-top-right-radius: min(11px, max(var(--vw) * 11, calc(100vw * 7 / 1024)));
+        border-bottom-right-radius: min(11px, max(var(--vw) * 11, calc(100vw * 7 / 1024)));
+        // border: 0;
+        background-color: var(--grey-light50);
+        width: min(396px, max(var(--vw) * 396, calc(100vw * 281 / 1024)));
+    }
+    &__in {
+        width: 171px;
+        width: min(171px, max(var(--vw) * 171, calc(100vw * 122 / 1024)));
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23676767' viewBox='0 0 16 16'%3E%3Cpath d='M11.9026 1.31632C11.903 1.43561 11.8767 1.55348 11.8256 1.66126C11.7744 1.76904 11.6998 1.864 11.6072 1.93915L6.81619 5.79589C6.67331 5.91333 6.49409 5.97754 6.30914 5.97754C6.12419 5.97754 5.94497 5.91333 5.8021 5.79589L1.01112 1.80341C0.848049 1.66787 0.745502 1.47311 0.726035 1.26196C0.706568 1.05082 0.771775 0.840591 0.90731 0.677525C1.04285 0.514458 1.23761 0.411912 1.44875 0.392445C1.6599 0.372978 1.87012 0.438184 2.03319 0.57372L6.31314 4.143L10.5931 0.693495C10.7103 0.595852 10.853 0.533827 11.0044 0.514759C11.1557 0.495691 11.3094 0.520379 11.4471 0.5859C11.5849 0.651421 11.701 0.755034 11.7817 0.884479C11.8624 1.01392 11.9044 1.16378 11.9026 1.31632Z'%3E%3C/path%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12% top 57%;
+        background-size: 1em auto;
+        @media (max-width: 375px) {
+            width: 110px;
+        }   
+
+    }
+    &__checkbox {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 5;
+
+        position: absolute;
+        top: -5px;
+        right: 0px;
+        width: 55px;
+        height: 39px;
+
+        width: min(55px, max(var(--vw) * 55, calc(100vw * 39 / 1024)));
+        height: min(39px, max(var(--vw) * 39, calc(100vw * 21 / 1024)));
+        @media (max-width: 767px) {
+            width: 35px;
+            height: 30px;
+        }
+    }
+    &__checkbox:checked ~ &__knobs::after {
+        background-color: var(--title);
+    }
+    &__checkbox:checked + &__knobs:before {
+        content: '';
+        left: 31px;
+        left: min(31px, max(var(--vw) * 31, calc(100vw * 20 / 1024)));
+        background-color: var(--white);
+        @media (max-width: 767px) {
+            left: 20px;
+        }
+    }
+    &__knobs {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        top: 0;
+        right: 0;
+        will-change: auto;
+        transition: 0.3s ease all;
+        z-index: 2;
+        width: 55px;
+        height: 32px;
+        width: min(55px, max(var(--vw) * 55, calc(100vw * 39 / 1024)));
+        height: min(32px, max(var(--vw) * 32, calc(100vw * 21 / 1024)));
+        @media (max-width: 767px) {
+            width: 35px;
+            height: 20px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            // top: 4px;
+            left: 5px;
+            width: min(20px, max(var(--vw) * 20, calc(100vw * 14 / 1024)));
+            height: min(20px, max(var(--vw) * 20, calc(100vw * 14 / 1024)));
+
+            background-color: var(--white);
+            border-radius: 50%;
+            z-index: 3;
+            @media (max-width: 767px) {
+                width: 12px;
+                height: 12px;
+                left: 4px;
+            }
+        }
+        &::after {
+            content: '';
+            will-change: auto;
+            transition: 0.2s ease all;
+            border-radius: 14px;
+            background-color: var(--grey-light50);
+            position: absolute;
+            // top: 0;
+            right: 0;
+            z-index: 1;
+            width: min(55px, max(var(--vw) * 55, calc(100vw * 39 / 1024)));
+            height: min(30px, max(var(--vw) * 30, calc(100vw * 21 / 1024)));
+            border: 1px solid var(--grey-light50);
+            @media (max-width: 767px) {
+                width: 35px;
+                height: 20px;
+            }
+        }
+    }
+    &__comment {
+        margin: 0;
+        font-size: min(15px, max(var(--vw) * 15, calc(100vw * 10 / 1024)));
+        line-height: min(25px, max(var(--vw) * 25, calc(100vw * 18 / 1024)));
+        @media (max-width: 767px) {
+            font-size: 9px;
+            line-height: 11px;
+        }
+    }
+
+    &__btn {
+        width: auto;
+        height: auto;
+        font-size: min(16px, max(var(--vw) * 16, calc(100vw * 11 / 1024)));
+        line-height: min(18px, max(var(--vw) * 18, 13px));
+        font-weight: 500;
+        padding-block: min(22px, max(var(--vw) * 22, calc(100vw * 14 / 1024)));
+        padding-inline: min(57px, max(var(--vw) * 57, calc(100vw * 19 / 1024)));
+        @media (max-width: 767px) {
+            max-width: 224px;
+            width: 100%;
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+
+    &__upload {
+        display: flex;
+        flex-direction: column;
+        row-gap: 57px;
+        @media (max-width: 767px) {
+            width: 100%;
+            align-items: center;
+        }
+    }
+
+    &__upload-file {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 1;
+        width: min(468px, max(var(--vw) * 468, calc(100vw * 333 / 1024)));
+        height: min(413px, max(var(--vw) * 413, calc(100vw * 333 / 1024)));
+
+        box-shadow: 0px 0px 38px 6px var(--grey-light);
+        border-radius: min(30px, max(var(--vw) * 30, 22px));
+        position: relative;
+        overflow: hidden;
+        &::after {
+            content: '';
+            background-image: url("./assets/img/upload.png");
+            width: 51px;
+            height: 52px;
+            position: relative;
+            z-index: 100;
+            margin-bottom: 12px;
+        }
+        @media (max-width: 767px) {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__upload-file-hiden {
+        &::after {
+            content: none;
+        }
+    }
+    &__comment-hiden {
+        display: none;
+    }
+    &__upload-input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        letter-spacing: 10em;
+        opacity: 0;
+        cursor: pointer;
+    }
+    &__upload-img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        letter-spacing: 10em;
+        opacity: 0;
+        cursor: pointer;
+        &::after {
+            content: none;
+        }
+    }
+    &__upload-photo-hiden {
+        display: none;
+    }
+    &__upload-photo {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &__wrap-active {
+        background-color: var(--background-light);
+        border: 1.5px solid var(--title);
+        color: var(--title);
+    }
+    &__token-border {
+        border-right: 0;
+    }
+    &__bid-border {
+        border-left: 0;
+    }
+}
+

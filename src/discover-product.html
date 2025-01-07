@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Molenhauer by figma</title>
+    <meta name="descriptin" content="Сайт по макерту Figma">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body class="page">
+    @@include('html/blocks/header.html', {
+        'discover-bold': 'menu__bold',
+        'creators-bold': '',
+        'sell-bold': '',
+        'stats-bold': '',
+    })
+    
+    <main class="main">
+        <section class="discover-product container">
+            <h1 class="visually-hidden">DiveSea web-site for verstaem.online</h1>
+            <div class="discover-product__wrapper">
+                <a href="discover.html" class="discover-product__detail">
+                    Product Detail
+                </a>
+                <div class="discover-product__content">
+                    <div class="discover-product__block">
+                        <div class="discover-product__picture">
+                            <img class="discover-product__img" src="assets/img/rectangle_2.png" alt="rectangle_2.png">
+                        </div>
+                    </div>
+                    <div class="discover-product__block">
+                        <div class="discover-product__column">
+                            <p class="discover-product__name">AlexCa.</p>
+                            <h2 class="discover-product__title text-nobreak">Project Sun-Glass</h2>
+                            <p class="discover-product__comment">A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits.</p>
+                        </div>
+                        <div class="discover-product__row">
+                            <div class="discover-product__thumbnail">
+                                <img class="discover-product__icon" src="assets/img/user1.png" alt="user1.png">
+                                <div class="discover-product__user">
+                                    <p class="discover-product__by text-nobreak">Created by.</p>
+                                    <p class="discover-product__nickname">Perperzon</p>
+                                </div>
+                            </div>
+                            <div class="discover-product__thumbnail">
+                                <img class="discover-product__icon" src="assets/img/user2.png" alt="user2.png">
+                                <div class="discover-product__user">
+                                    <p class="discover-product__by text-nobreak">Owned by</p>
+                                    <p class="discover-product__nickname">Videz</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="discover-product__row">
+                            <div class="discover-product__actiom">
+                                <p class="discover-product__comment text-nobreak">Current bid</p>
+                                <div class="action-vector action-vector-big">1.75</div>
+                            </div>
+                            <div class="discover-product__text">
+                                <p class="discover-product__comment discover-product__subcomment">End in</p>
+                                <p class="discover-product__date text-nobreak">Jun 17, 2023 at 05:08</p>
+                            </div>
+                        </div>
+                        <button class="btn btn-black btn-product discover-product__btn" type="button">Place Bid</button>
+                    </div>
+                </div>
+                <div class="history">
+                    <div class="history__picture">
+                        <img class="history__img" src="assets/img/bid_history.png" alt="bid_history.png">
+                    </div>
+                    @@include('html/blocks/popup-in.html')
+                </div>
+                <p class="discover-product__subtitle">From Creator</p>
+                <div class="discover-product__creator">
+                    <div class="discover-product__wrap">
+                        @@include('html/blocks/card-perperzon.html', {'picture': '<img class="card__img" src="assets/img/rectangle_1.png" alt="rectangle_1.png">', 'name': 'Sun-Glass'})
+                    </div>
+                    <div class="discover-product__wrap">
+                        @@include('html/blocks/card-perperzon.html', {'picture': '<img class="card__img" src="assets/img/rectangle_2.png" alt="rectangle_2.png">', 'name': 'Sun-Glass'})
+                    </div>
+                    <div class="discover-product__wrap">
+                        @@include('html/blocks/card-perperzon.html', {'picture': '<img class="card__img" src="assets/img/rectangle_3.png" alt="rectangle_3.png">', 'name': 'Sun-Glass'})
+                    </div>
+                    <div class="discover-product__wrap">
+                        @@include('html/blocks/card-perperzon.html', {'picture': '<img class="card__img" src="assets/img/rectangle_4.png" alt="rectangle_4.png">', 'name': 'Sun-Glass'})
+                    </div>
+                    <div class="discover-product__wrap">
+                        @@include('html/blocks/card-perperzon.html', {'picture': '<img class="card__img" src="assets/img/rectangle_5.png" alt="rectangle_5.png">', 'name': 'Sun-Glass'})
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    @@include('html/blocks/popup.html')
+    @@include('html/blocks/footer.html')
+    <script src="script.js"></script>
+</body>
+
+</html>

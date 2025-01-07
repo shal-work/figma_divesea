@@ -1,0 +1,80 @@
+.stats {
+    &__title {
+        padding: 0;
+        margin: 0;
+        font-weight: 600;
+        font-size:  min(45px, max(calc(var(--vw) * 45), 32px));
+        line-height: min(27px, max(calc(var(--vw) * 27), 19px));
+        font-style: normal;
+        letter-spacing: normal;
+        color: var(--title);
+        text-align: center;
+        padding-bottom: min(60px, max(calc(var(--vw) * 60), 45px));
+        @media (max-width: 767px) {
+            font-size:  30px; 
+            line-height: 37.5px;
+            padding-inline: 20px;
+        }
+        @media (max-width: 375px) {
+            font-size:  min(30px, 8vw); 
+            line-height: min(37.5px, 10vw); 
+            padding-inline: 20px;
+        }
+    }
+
+    &__header {
+        padding-top: 98px;
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    &__cell {
+        color: var(--title);
+        position: relative;
+        padding: 0;
+        // &::after {
+        //     content: '';
+        //     background-image: url('./assets/img/arrows-down-up.png');
+        //     background-size: cover;
+        //     background-repeat: no-repeat;
+        //     background-position: center;
+        //     position: absolute;
+        //     width: min(16px, max(var(--vw)* 16, 10px));
+        //     height: min(20px, max(var(--vw)* 20, 13px));
+        //     right: 0;
+        // }
+    }
+    &__btn {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        display: flex;
+        position: relative;
+        align-items: center;
+        cursor: pointer;
+        width: 100%;
+        height: 21px;
+        background-color: transparent;
+
+        &::after {
+            content: '';
+            background-image: url('./assets/img/arrows-down-up.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            width: min(19px, max(var(--vw)* 19, 14px));
+            height: min(19px, max(var(--vw)* 19, 14px));
+            left: min(15px, max(var(--vw)* 15, calc(100vw * 10 / 1024)));
+        }
+    }
+    &__visible {
+        @media (max-width: 767px) {
+            display: none;
+        }
+        
+    }
+}
+
