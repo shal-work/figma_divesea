@@ -28,7 +28,6 @@ const webp = require('gulp-webp');//конвертация картинок в *
 
 
 
-
 const fileInclude = {
     prefix: '@@',
     basepath: '@file'
@@ -59,7 +58,7 @@ gulp.task('html:docs', () => {
         .src('./src/*.html')
         .pipe(changed(docs, {hasChanged: changed.compareContents}))
         .pipe(fileinclude(fileInclude))
-        .pipe(webphtml(['.jpg', '.png', '.gif']))
+        .pipe(webphtml(['.jpg', '.png']))
         .pipe(htmlclean())
         .pipe(gulp.dest(docs))
         .pipe(browsersync.stream());
@@ -83,25 +82,26 @@ gulp.task('sass:docs', () => {
 
 gulp.task('copy-img:docs', function ()  {
   return gulp
-    .src(['./src/assets/img/**/*', '!./src/assets/img/**/*.svg'], { encoding: false })// берем исходники-картинки в src  Имена с маленькой буквы
+    .src('./src/assets/img/**/*', { encoding: false })// берем исходники-картинки в src Имена с маленькой буквы
       .pipe(changed(docs + '/assets/img')) //если картинки изменились идем дальше, если нет пропускаем все
       .pipe(webp()) //обарабатываем картинки делаем webp
       .pipe(gulp.dest(docs + '/assets/img'))//сохраняем картинки
       //второй этап
-      .pipe(gulp.src(['./src/assets/img/**/*', '!./src/assets/img/**/*.svg'], { encoding: false }))//опять берем исходники-картинки в src Имена с маленькой буквы
+      .pipe(gulp.src('./src/assets/img/**/*', { encoding: false }))//опять берем исходники-картинки в src Имена с маленькой буквы
       .pipe(changed(docs + '/assets/img')) //если картинки изменились идем дальше, если нет пропускаем все
       .pipe(imagemin({verbose: true})) //минимизируем картинки
       .pipe(gulp.dest(docs + '/assets/img'))
       .pipe(browsersync.stream());
 });
 
-gulp.task('copy-svg:docs', function ()  { //для svg спрайта
-  return gulp
-    .src('./src/assets/img/**/*.svg')
-      .pipe(changed(docs + '/assets/img'))
-      .pipe(gulp.dest(docs + '/assets/img'))
-      .on("end", browsersync.reload);
-});
+// gulp.task('copy-svg:docs', function ()  { //для svg спрайта
+//   return gulp
+//     .src('./src/assets/img/**/*.svg')
+//       .pipe(changed(docs + '/assets/img'))
+//       .pipe(gulp.dest(docs + '/assets/img'))
+//       .on("end", browsersync.reload);
+// });
+
 
 gulp.task('copy-fonts:docs', (done) => {
   if (fs.existsSync('./src/assets/fonts/')) {
@@ -157,5 +157,5 @@ gulp.task('server-docs', () => {
   });
 });
 
-gulp.task( 'build-docs', gulp.parallel('copy-fonts:docs', 'html:docs', 'sass:docs', 'copy-img:docs','copy-svg:docs','js:docs', 'copy-favicon:docs'));
+gulp.task( 'build-docs', gulp.parallel('copy-fonts:docs', 'html:docs', 'sass:docs', 'copy-img:docs','js:docs', 'copy-favicon:docs'));
 

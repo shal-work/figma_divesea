@@ -390,12 +390,15 @@
         height: min(99px, max(calc(var(--vw) * 99), 70px));
         width: min(99px, max(calc(var(--vw) * 99), 70px));
         overflow: hidden;
-        display: flex;
+        // display: flex;
         position: relative;
         @media (max-width: 375px) {
             height: calc(100vw * 82 / 375);
             width: calc(100vw * 82 / 375);
         }
+    }
+    &__loader {
+        display: flex;
     }
     &__value-loader {
         display: flex;
