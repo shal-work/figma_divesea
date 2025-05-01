@@ -1,8 +1,16 @@
 <section class="first">
+    <div class="first__block">
+        @@include('../blocks/header.html', {
+            'discover-bold': '',
+            'creators-bold': '',
+            'sell-bold': '',
+            'stats-bold': '',
+        })
+    </div>
     <h1 class="visually-hidden">DiveSea web-site for verstaem.online</h1>
     <div class="first__content">
         <div class="first__left">
-            <picture class="logo">
+            <picture class="first__logo">
                 <source type="image/webp" srcset="assets/img/logo_54.webp">
                 <img class="logo__link-img" src="assets/img/logo_54.png" alt="Logo DiveSea"  width="54" height="54">
             </picture>
@@ -66,4 +74,7 @@
             </div>
         </div>
    </div>
+   <div class="first__block">
+        @@include('../blocks/footer.html')
+    </div>
 </section>
