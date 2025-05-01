@@ -1,25 +1,22 @@
 .weekly {
     background-color: var(--background-grey);
-    padding-block: 70px 100px;
+    padding-top: min(70px, max(calc(var(--vw) * 70), 50px));
+    padding-bottom: min(100px, max(calc(var(--vw) * 100), 40px));
     overflow: hidden;
-    max-width: calc(var(--container-width));
-    margin-inline: auto; //  = margin: 0 auto;
-    padding-inline: 0;
+    // max-width: calc(var(--container-width));
+    margin: 0 auto;
     &__title {
         padding: 0;
         margin: 0;
-        // font-family: "Outfit", sans-serif;
-        // font-family: "Public Sans", sans-serif;
-        // font-family: "Inter", sans-serif;
-        // font-family: "Poppins", serif; 
         font-weight: 600;
         font-size:  min(45px, max(calc(var(--vw) * 45), 32px));
         line-height: min(27px, max(calc(var(--vw) * 27), 19px));
         font-style: normal;
         letter-spacing: normal;
-        color: var(--grey-light);
+        color: var(--grey-light-contrast);
         text-align: center;
-        padding-block: 0 min(100px, max(calc(var(--vw) * 100), 70px));
+        padding-bottom: min(100px, max(calc(var(--vw) * 100), 70px));
+        // padding-bottom: min(100px, max(calc(var(--vw) * 100), 70px));
         @media (max-width: 375px) {
             font-size:  28px;
             line-height: 30px;
@@ -28,7 +25,6 @@
     }
     &__slides {
         display: flex;
-        column-gap: min(40px, max(calc(var(--vw) * 40), 28px));
         width: 300%;
         position: relative;
         will-change: transform;
@@ -40,8 +36,9 @@
         justify-content: center;
     }
     &__wrep {
-        width: clamp(199px, calc(var(--vw) * 281), 282px);
-        height: clamp(286x, calc(var(--vw) * 402), 403px);
+        width: min(282px, max(calc(var(--vw) * 282), 199px));
+        height: min(403px, max(calc(var(--vw) * 403), 286px));
+        margin-right: min(40px, max(calc(var(--vw) * 40), 28px));
         @media (max-width: 767px) {
             width: 198px;
             height: 284px;

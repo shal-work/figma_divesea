@@ -1,6 +1,6 @@
 .questions {
-    opacity: 0;
-    display: none;
+    opacity: 1;
+    display: block;
     padding-bottom: min(214px, max(calc(var(--vw) * 214), 152px));
     &__text {
         text-align: center;
@@ -14,7 +14,7 @@
         font-weight: 600;
         line-height: 64px;
         line-height: min(68px, max(calc(var(--vw) * 68), 42px));
-        color: var(--grey-light);
+        color: var(--grey-light-contrast);
         @media (max-width: 375px) {
             font-size: min(24px, 7vw);
             line-height: min(28px, 8vw);
@@ -30,7 +30,7 @@
     &__faq {
         display: flex;
         flex-direction: column;
-        margin-bottom: 30px;
+        margin-bottom: min(30px, max(calc(var(--vw) * 30), 20px));
         width: 100%;
         cursor: pointer;
         border-bottom: 1px solid var(--grey-light);
@@ -38,11 +38,13 @@
     &__faq-title {
         display: flex;
         // margin: 20px 40px 20px 0px;
-        padding-block: min(9px, max(calc(var(--vw) * 9), 6px));
+        padding-top: min(9px, max(calc(var(--vw) * 9), 6px));
+        padding-bottom: min(9px, max(calc(var(--vw) * 9), 6px));
         margin: 0 14px;
         position: relative;
         @media (max-width: 767px) {
-            padding-block: max(4px, 1vw);
+            padding-top: max(4px, 1vw);
+            padding-bottom: max(4px, 1vw);
         }
     }
     &__inner {
@@ -87,6 +89,8 @@
         background-color: transparent;
         border: 0;
         cursor: pointer;
+        position: relative;
+        width: 100%;
         @media (max-width: 767px) {
             font-size: max(3.2vw, 12px);
             font-size: 12px;
@@ -105,6 +109,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
             transform: rotate(0deg);
             will-change: transform;
             transition: 0.2s;
@@ -112,8 +117,8 @@
             position: absolute;
             width: min(32px, max(calc(var(--vw) * 32), 23px));
             height: min(32px, max(calc(var(--vw) * 32), 23px));
-            right: -12px;
             right: max(-12px, min(calc(var(--vw) * -12), -6px));
+            bottom: min(30px, max(calc(var(--vw) * 30), 23px));
             border-radius: 50%;
             background-color: var(--title);
             color: var(--white);

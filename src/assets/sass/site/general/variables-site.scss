@@ -1,0 +1,33 @@
+// Colors
+// Разница --  и $
+// -- это для css
+//  $ это переменая scss
+
+:root {
+    --background-light: #F9F9F9;
+    --background-grey: #F1F1F1;
+    --background-internal: #EDEDED; 
+    --grey: #606060; 
+ 
+    --green: #10C352; 
+    --red: #E23333; 
+    --button: #141416;
+    --title: #141416;
+    --paragraph: #676767;
+    --white: #FFFFFF;
+    --grey-light: #B9B9B9;
+    --blur: #cde1e0;
+    --grey-light50: #b9b9b980;
+    --grey-light50: #dad9d9;
+    --background-time: #1c1e2159;
+    --blue: #007AFF;
+
+    --grey-contrast: #A1A1A1;
+    --grey-light-contrast: #4F4F4F;
+    --paragraph-contrast: #595959;
+    --green-contrast: #08632A;
+    --red-contrast: #B01717; 
+    --grey-light50-contrast: #A1A1A1;
+    --grey-light50-contrast: #F0F0F0;
+}
+

@@ -2,11 +2,8 @@
 
     display: flex;
     justify-content: space-between;
-    column-gap: 34px;
-    // padding-left: var(--container-padding-x);
-    // padding-left: 96px;
-    padding-top: 45px;
-    padding-bottom: 165px;
+    padding-top: min(45px, max(calc(var(--vw) * 45), 20px));
+    padding-bottom: min(165px, max(calc(var(--vw) * 165), 90px));
     background-color: var(--background-light);
     overflow: hidden;
     
@@ -20,6 +17,7 @@
     }
     &__block {
         width: 50%;
+        margin-right: 34px;
         @media (max-width: 767px) {
             width: 100%;
         }
@@ -42,9 +40,9 @@
         // font-family: "Inter", sans-serif;
         // font-family: "Poppins", serif;
         font-weight: 600;
-        font-size: max(9.25px, 2vw);
+        font-size: min(18px, max(calc(var(--vw) * 18), 12px));
         font-style: normal;
-        line-height: 11px;
+        line-height: min(12px, max(calc(var(--vw) * 12), 11px));
         letter-spacing: 1.23px;
         color: var(--grey);
         @media (max-width: 767px ) {
@@ -55,26 +53,22 @@
             &::before {
                 content: '';
                 border-top: 2px solid var(--grey-light50);
-                // display: flex;
                 width: 33px;
             }
         }
     }
     &__title {
-        // font-family: "Outfit", sans-serif;
-        // font-family: "Public Sans", sans-serif;
-        // font-family: "Inter", sans-serif;
-        // font-family: "Poppins", serif;
         font-weight: 600;
         font-size: calc(var(--vw) * 75);
-        font-size: clamp(40px, calc(var(--vw) * 75), 80px);
-        line-height: clamp(60px, calc(var(--vw) * 90), 91px);
+        font-size: min(80px, max(calc(var(--vw) * 80), 40px));
+        line-height: min(91px, max(calc(var(--vw) * 91), 60px));
         letter-spacing: -3px;
         color: var(--title);
         padding-bottom: 12px;
         @media (max-width: 767px) {
             text-align: center;
-            padding-inline: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
         }
         @media (max-width: 375px) {
             font-size: min(50px, 10vw);
@@ -86,27 +80,19 @@
         padding-bottom: 32px;
         @media (max-width: 767px) {
             text-align: center;
-            padding-inline: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
         }
     }
     &__comment {
         padding: 0;
         margin: 0;
-        // font-family: "Outfit", sans-serif;
-        // font-family: "Public Sans", sans-serif;
         font-family: "Inter", sans-serif;
-        // font-family: "Poppins", serif;
         font-weight: 400;
-        // font-size: 18px;
-        font-size: calc(var(--vw) * 18);
-        font-size: clamp(11px, calc(var(--vw) * 18), 20px);
-        
-        line-height: 28px;
-        line-height: calc(var(--vw) * 28);
-        line-height: clamp(18px, calc(var(--vw) * 28), 30px);
+        font-size: min(18px, max(calc(var(--vw) * 18), 12px));
+        line-height: min(30px, max(calc(var(--vw) * 30), 18px));
         letter-spacing: normal;
         color: var(--paragraph);
-        
         padding-right: calc(var(--vw) * 28);
         @media (max-width: 767px) {
             text-align: center;
@@ -114,24 +100,17 @@
         }
     }
     &__bold {
-        // font-family: "Outfit", sans-serif;
-        // font-family: "Public Sans", sans-serif;
         font-family: "Inter", sans-serif;
-        // font-family: "Poppins", serif;
         font-weight: 600;
-        // font-size: 18px;
-        font-size: calc(var(--vw) * 18);
-        font-size: clamp(10px, calc(var(--vw) * 18), 20px);
-        // line-height: 28px;
+        font-size: min(18px, max(calc(var(--vw) * 18), 12px));
         line-height: calc(var(--vw) * 28);
-        line-height: clamp(18px, calc(var(--vw) * 28), 30px);
+        line-height: min(30px, max(calc(var(--vw) * 30), 18px));
         letter-spacing: normal;
         color: var(--title);
     }
 
     &__btns {
         display: flex;
-        column-gap: 23px;
         @media (max-width: 767px) {
             justify-content: center;
         }
@@ -144,10 +123,8 @@
     &__custom {
         width: auto;
         height: auto;
-        // padding: calc(var(--vw) * 16) calc(var(--vw) * 29);
-        padding-block: clamp(10px, calc(var(--vw) * 16), 33px);
-        padding-inline: clamp(15px, calc(var(--vw) * 29), 57px);
-        
+        padding: min(33px, max(1.25vw, 10px)) min(76px, max(2.22vw, 10px));
+        margin-right: calc(var(--vw) * 65);
         @media (max-width: 1024px) {
             font-weight: 500;
             letter-spacing: normal;
@@ -155,7 +132,7 @@
         @media (max-width: 767px) {
             border-radius: 8px;
             padding: 13px 14px;
-            font-size: 11px;
+            font-size: 12px;
             font-style: normal;
             line-height: 17px;
             letter-spacing: 1px;
@@ -163,22 +140,17 @@
     }
     &__features {
         display: flex;
-        // column-gap: 65px;
-        column-gap: calc(var(--vw) * 65);
         padding-top: 58px;
+        width: 100%;
+        justify-content: space-between;
+        padding-right: 30%;
         @media (max-width: 767px) {
             display: none;
         }
     }
     &__value {
-        // font-family: "Outfit", sans-serif;
-        // font-family: "Public Sans", sans-serif;
-        // font-family: "Inter", sans-serif;
-        // font-family: "Poppins", serif;
         font-weight: 600;
-        // font-size: 37px;
-        // font-size: calc(var(--vw) * 37);
-        font-size: clamp(26px, calc(var(--vw) * 37), 60px);
+        font-size: min(37px, max(calc(var(--vw) * 37), 26px));
         line-height: 46px;
         line-height: calc(var(--vw) * 46);
         letter-spacing: normal;
@@ -187,17 +159,9 @@
     }
 
     &__name {
-        // font-family: "Outfit", sans-serif;
-        // font-family: "Public Sans", sans-serif;
-        // font-family: "Inter", sans-serif;
-        // font-family: "Poppins", serif;
         font-weight: 500;
-        font-size: 12px;
-        font-size: calc(var(--vw) * 12);
-        font-size: clamp(8px, calc(var(--vw) * 12), 30px);
-        // line-height: 18px;
-        // line-height: calc(var(--vw) * 12);
-        line-height: clamp(8px, calc(var(--vw) * 12), 30px);
+        font-size: min(13px, max(calc(var(--vw) * 13), 12px));
+        line-height:  min(18px, max(calc(var(--vw) * 18), 12px));
         letter-spacing: normal;
         color: var(--paragraph);
     }
@@ -217,18 +181,18 @@
                              "area-3 area-4";
         column-gap: calc(var(--vw) * 40);
         column-gap: min(calc(var(--vw) * 40), 40px);
-        column-gap: clamp(10px, calc(var(--vw) * 40), 42px);
+        column-gap: min(42px, max(calc(var(--vw) * 42), 10px));
         // justify-items: end;
         @media (max-width: 767px) {
             column-gap: 10px;
         }
     }
     &__active-size {
-        width: clamp(208px, calc(var(--vw) * 391), 400px);
-        height: clamp(210px, calc(var(--vw) * 394), 403px);
+        width: min(400px, max(calc(var(--vw) * 400), 280px));
+        height: min(400px, max(calc(var(--vw) * 400), 280px));
         @media (max-width: 767px) {
-            width: clamp(208px, 58vw, 400px);
-            height: clamp(210px, 58vw, 403px);
+            width: 58vw;
+            height: 58vw;
         }
         @media (max-width: 375px) {
             width: max(70px, 55.5vw);
@@ -238,31 +202,29 @@
     &__active-inner {
         grid-area: area-1;
         margin-top: 11px;
-        // width: clamp(208px, calc(var(--vw) * 391), 400px);
-        // height: clamp(210px, calc(var(--vw) * 394), 403px);
         overflow: hidden;
         box-shadow: 5px 14px 30px 8px var(--blur);
         border-radius: 25px;
-        // @media (max-width: 767px) {
-        //     width: clamp(208px, 58vw, 400px);
-        //     height: clamp(210px, 58vw, 403px);
-        // }
     }
     &__active-slides {
         display: flex;
         width: 500%;
         transition: transform 300ms ease;
         will-change: transform;
+        border-radius: 25px;
     }
     &__active-img {
         object-fit: cover;
+        border-radius: 25px;
     }
     &__following-size {
-        width: clamp(170px, calc(var(--vw) * 319), 329px);
-        height: clamp(171px, calc(var(--vw) * 322), 332px);
+        width: min(329px, max(calc(var(--vw) * 329), 170px));
+        height: min(329px, max(calc(var(--vw) * 329), 170px));
+        // height: min(322px, max(calc(var(--vw) * 322), 171px));
+        border-radius: 25px;
         @media (max-width: 767px) {
-            width: clamp(170px, 39vw, 308px);
-            height: clamp(171px, 39vw, 332px);
+            width: 40vw;
+            height: 40vw;
         }
         @media (max-width: 375px) {
             width: max(70px, 45.4vw);
@@ -274,8 +236,9 @@
         overflow: hidden;
         box-shadow: -5px 14px 30px 0px var(--blur);
         border-radius: 25px;
-        // transform: translateX(23px);
         transform: translateX(10%);
+        z-index: 111;
+
     }
     &__following-slides {
         display: flex;
@@ -283,6 +246,7 @@
         height: 500%;
         will-change: transform;
         transition: transform 300ms ease;
+        border-radius: 25px;
     }
     &__following-img {
         object-fit: cover;
@@ -291,26 +255,17 @@
         grid-area: area-2;
         display: flex;
         align-items: flex-end;
-        // justify-content: space-between;
-
         background: url('./assets/img/dot_ornament.png') right center no-repeat;   
-        // width: clamp(92px, calc(var(--vw) * 173), 180px);
-        height: clamp(102px, calc(var(--vw) * 231), 180px);
-        // height: calc(var(--vw) * 173);
-        // transform: translateX(0);
+        height: min(180px, max(calc(var(--vw) * 180), 102px));
+
         position: relative;
         @media (max-width: 1024px) {
             background-size: cover;
             background-size: contain;
         }
         @media (max-width: 767px) {
-            // width: clamp(92px, 20vw, 120px);
-            // width: 300px;
-            // width: clamp(92px, 20vw, 300px);
-            width: clamp(124px, 35vw, 300px);
-            height: clamp(102px, 27vw, 332px);
-            // background-position: left;
-            // background: url('./assets/img/dot_b_ornament.png') right center no-repeat;  
+            width: 35vw;
+            height: 27vw;
         }
         @media (max-width: 375px) {
             width: max(20px, 35vw);
@@ -319,15 +274,13 @@
         &::before {
             content: "";
             background: url('./assets/img/arrow.png') no-repeat center / cover ; 
-            width: clamp(58px, calc(var(--vw) * 128), 150px);
-            height: clamp(56px, calc(var(--vw) * 124), 150px);
-            // transform: translateX(-148%);
-            // transform: translateX(-192px);
+            width: min(150px, max(calc(var(--vw) * 150), 58px));
+            height: min(150px, max(calc(var(--vw) * 150), 56px));
             position: absolute;
             left: 0;
             @media (max-width: 767px) {
-                width: clamp(58px, 15vw, 150px);
-                height: clamp(56px, 14vw, 150px);
+                width: 15vw;
+                height: 14vw;
             }
             @media (max-width: 375px) {
                 width: max(20px, 15.5vw);
@@ -338,8 +291,6 @@
     &__action {
         grid-area: area-3;
         display: flex;
-        column-gap: 0;
-        padding-bottom: 0;
         padding-top: calc(var(--vw) * 71);
         justify-content: center;
         @media (max-width: 767px) {

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Molenhauer by figma</title>
-    <meta name="descriptin" content="Сайт по макерту Figma">
+    <meta name="description" content="Сайт по макерту Figma">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +48,7 @@
                             </div>
                             <div class="sell__column">
                                 <label class="sell__label" for="size">Size</label>
-                                <input class="sell__wrap sell__size" type="text" id="size" name="size" placeholder="Ex - 100 x 100">
+                                <input class="sell__wrap sell__size" type="text" id="size" name="size" placeholder="1000 x 1000">
                             </div>
                         </div>
                     </div>
@@ -62,8 +62,8 @@
                                 <label class="sell__label" for="bid">Your Bid</label>
                                 <div class="sell__action">
                                     <label class="sell__label-token" for="token"></label>
-                                    <select class="sell__token sell__token-border sell__wrap" name="token" id="token" required>
-                                        <option class="sell__option sell__wrap" value="ETH" selected>ETH</option>
+                                    <select class="sell__token sell__token-border sell__wrap" id="token" id="token" required aria-label="token">
+                                        <option class="sell__option sell__wrap" value="" selected>ETH</option>
                                         <option class="sell__option sell__wrap"  value="AAVE">AAVE</option>
                                         <option class="sell__option sell__wrap"  value="ALGO">ALGO</option>
                                         <option class="sell__option sell__wrap"  value="AGIX">AGIX</option>
@@ -74,8 +74,8 @@
                             </div>
                             <div class="sell__column">
                                 <label class="sell__label" for="in">In Stock</label>
-                                <select class="sell__in sell__wrap" name="in-stock" id="in">
-                                    <option class="sell__option sell__wrap" value="001" selected>001</option>
+                                <select class="sell__in sell__wrap" name="in-stock" id="in" aria-label="in">
+                                    <option class="sell__option sell__wrap" value="" selected>001</option>
                                     <option class="sell__option sell__wrap" value="002" selected>002</option>
                                     <option class="sell__option sell__wrap" value="003" selected>003</option>
                                     <option class="sell__option sell__wrap" value="004" selected>004</option>
@@ -91,7 +91,7 @@
                     </div>
                     <div class="sell__block">
                         <label class="sell__label" for="direct-sale">Direct Sale</label>
-                        <input type="checkbox" class="sell__checkbox sell__wrap" id="direct-sale"/>
+                        <input type="checkbox" class="sell__checkbox sell__wrap" id="direct-sale" aria-label="direct-sale"/>
                         <div class="sell__knobs"></div>
                         <p class="sell__comment">No Bids - Only Direct Salling</p>
                     </div>
@@ -99,21 +99,18 @@
                 </div>
                 <div class="sell__upload">
                     <div class="sell__upload-file">
-                        <img class="sell__upload-photo-hiden" src="data:," alt="Upload Photo" id="img1">
+                        <img class="sell__upload-photo-hiden" src="data:," alt="Upload Photo" id="img1" width="51" height="52">
                         <p class="sell__comment text-center ">PNG, GIF, WEBP, MP4 or MP3. Max 1Gb.</p>
                         <label>
-                            <input class="sell__upload-input" type='file' id='upload'>
+                            <input class="sell__upload-input" type='file' id='upload' aria-label="upload">
                         </label>
                     </div>
-                    <button class="btn btn-black sell__btn sell__uoload" data-btn="upload" type="button">Upload</button>
+                    <button class="btn btn-black sell__btn sell__btn" data-btn="upload" type="button">Upload</button>
                 </div>
             </form>
         </section>
     </main>
     @@include('html/blocks/footer.html')
-    <!-- <a href="#up" class="pageup" data-show="true">
-        <div class="up-icon"></div>
-    </a> -->
 
     <script src="script.js"></script>
 </body>

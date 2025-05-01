@@ -1,31 +1,38 @@
 <section class="first">
-    <div class="first__footer-block">
-        @@include('../blocks/header.html', {
-            'discover-bold': '',
-            'creators-bold': '',
-            'sell-bold': '',
-            'stats-bold': '',
-        })
-    </div>
     <h1 class="visually-hidden">DiveSea web-site for verstaem.online</h1>
     <div class="first__content">
         <div class="first__left">
-            <div class="first__logo">
-                 <img  src="assets/img/logo.png" alt="logo">
-            </div>
-            
+            <picture class="logo">
+                <source type="image/webp" srcset="assets/img/logo_54.webp">
+                <img class="logo__link-img" src="assets/img/logo_54.png" alt="Logo DiveSea"  width="54" height="54">
+            </picture>
             <div class="first__wallet">
                 <h2 class="first__title">Choose Wallet</h2>
                 <a class="first__btn" href="#">
-                    <img class="first__img" src="assets/img/metamask.png" alt="metamask">
+                    <picture>
+                        <source type="image/webp" srcset="assets/img/metamask_30.webp"  media="(max-width: 767px)">
+                        <source type="image/png" srcset="assets/img/metamask_30.png" media="(max-width: 767px)">
+                        <source type="image/webp" srcset="assets/img/metamask_40.webp">
+                        <img class="first__img" src="assets/img/metamask_40.png" alt="Logo Finsweet"  width="40" height="40">
+                    </picture>
                     <p class="first__text">Metamask</p>
                 </a>
                 <a class="first__btn" href="#">
-                    <img class="first__img" src="assets/img/trustwallet.png" alt="trustwallet">
+                    <picture>
+                        <source type="image/webp" srcset="assets/img/trustwallet_30.webp"  media="(max-width: 767px)">
+                        <source type="image/png" srcset="assets/img/trustwallet_30.png" media="(max-width: 767px)">
+                        <source type="image/webp" srcset="assets/img/trustwallet_40.webp">
+                        <img class="first__img" src="assets/img/trustwallet_40.png" alt="Logo Finsweet"  width="40" height="40">
+                    </picture>
                     <p class="first__text">Trust Wallet</p>
                 </a>
-                <a class="first__btn" href="#" >
-                    <img class="first__img" src="assets/img/ethereum.png" alt="Enter ethereum address">
+                <a class="first__btn" href="#">
+                    <picture>
+                        <source type="image/webp" srcset="assets/img/ethereum_30.webp"  media="(max-width: 767px)">
+                        <source type="image/png" srcset="assets/img/ethereum_30.png" media="(max-width: 767px)">
+                        <source type="image/webp" srcset="assets/img/ethereum_40.webp">
+                        <img class="first__img" src="assets/img/ethereum_40.png" alt="Logo ethereum"  width="40" height="40">
+                    </picture>
                     <p class="first__text">Enter ethereum address</p>
                 </a>
                 <a href="main.html" class="btn first__btn-custom  btn-black text-nobreak text-uppercase">Next</a>
@@ -40,16 +47,16 @@
             </div>
         </div>
         <div class="first__right illustration">
-            <div class="illustration__inner illustration__size">
+            <div class="illustration__inner">
                 <div class="illustration__slides">
-                    <div class="illustration__item illustration__size">
-                        <img class="illustration__img illustration__img_1" src="assets/img/rectangle_1.png" alt="rectangle_1">
+                    <div class="illustration__item">
+                        <img class="illustration__img" src="assets/img/rectangle_1_393.png" alt="rectangle_1" width="393" height="392">
                     </div>
-                    <div class="illustration__item illustration__size">
-                        <img class="illustration__img illustration__img_2" src="assets/img/rectangle_2.png" alt="rectangle_2">
+                    <div class="illustration__item">
+                        <img class="illustration__img" src="assets/img/rectangle_2_393.png" alt="rectangle_2" width="393" height="392">
                     </div>
-                    <div class="illustration__item illustration__size">
-                        <img class="illustration__img illustration__img_3" src="assets/img/rectangle_3.png" alt="rectangle_3">
+                    <div class="illustration__item">
+                        <img class="illustration__img" src="assets/img/rectangle_3_393.png" alt="rectangle_3" width="393" height="392">
                     </div>
                 </div>
             </div>
@@ -60,12 +67,9 @@
                 CloseSea Is A Great Platform For Discover Largest NFTs And Other Stuff !!
             </p>
             <div class="illustration__btns btn-dual">
-                <button type="button" class="btn btn-spike-prev disabled" data-slide="prev"></button>
-                <button type="button" class="btn btn-spike-next" data-slide="next"></button>
+                <button type="button" class="btn btn-spike-prev disabled" data-slide="prev" aria-label="Вперед"></button>
+                <button type="button" class="btn btn-spike-next" data-slide="next" aria-label="Назад"></button>
             </div>
         </div>
    </div>
-   <div class="first__footer-block">
-        @@include('../blocks/footer.html')
-    </div>
 </section>

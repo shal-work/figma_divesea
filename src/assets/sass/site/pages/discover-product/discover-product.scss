@@ -21,7 +21,6 @@
 		color: var(--title);
 		display: flex;
 		align-items: center;
-		column-gap: min(34px, max(calc(var(--vw) * 34), 24px));
 		padding-bottom: min(59px, max(calc(var(--vw) * 59), 42px));
 		left: 0;
 		position: relative;
@@ -35,6 +34,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			margin-right:  min(34px, max(calc(var(--vw) * 34), 24px));;
 		}
 		@media (max-width: 767px) {
 			display: none;
@@ -46,8 +46,6 @@
 		background-color: var(--white);
 		padding: min(37.5px, max(calc(var(--vw) * 37.5), 27px));
 		border-radius: min(24px, max(calc(var(--vw) * 24), 17px));
-		// column-gap: min(137px, max(calc(var(--vw) * 137), 96px));
-		column-gap: 10%;
 		align-items: flex-end;
 		box-shadow: 0px 10px 47px 0px var(--grey-light);
 
@@ -56,13 +54,11 @@
 	
 		@media (max-width: 1024px) {
 			align-items: normal;
-			column-gap: 5vw;
 		}
 		@media (max-width: 767px) {
 			flex-direction: column;
 			align-items: center;
-			row-gap: 5vw;
-			padding: min(27px, max(3.5vw, 15px));
+			padding: min(24px, max(calc(var(--vw) * 24), 15px));
 		}
 	}
 	&__picture {
@@ -71,15 +67,15 @@
 		border-radius: min(23px, max(var(--vw) * 23, 17px));
 		overflow: hidden;
 		@media (max-width: 1024px) {
-			aspect-ratio: 1;
 			width: 100%;
-			height: auto;
+			height: 100%;
 		}
 	}
 	&__img {
 		object-fit: cover;
 		width: 100%;
 		height: 100%;
+		border-radius: min(23px, max(var(--vw) * 23, 17px));
 	}
 	&__block {
 		display: flex;
@@ -94,6 +90,17 @@
 		}
 		@media (max-width: 767px) {
 			width: 100%;
+			padding: 0 5vw;
+		}
+		@media (max-width: 412px) {
+			padding: 0;
+		}
+	}
+	&__block-left {
+		margin-right: 10%;
+		@media (max-width: 767px) {
+			margin: 0;
+			margin-bottom: 20px;
 		}
 	}
 	&__title {
@@ -105,8 +112,6 @@
 		// padding-bottom: 29px;
 		padding-bottom: 2vw;
 		@media (max-width: 1024px) {
-			font-size: 36px; 
-			font-size: 3.9vw; 
 			font-size: min(36px, max(3.9vw, 16px));
 			line-height: 22px;
 		}
@@ -115,7 +120,7 @@
 		margin: 0;
 		font-size: min(19px, max(var(--vw) * 19, 13px));
 		line-height: min(29px, max(var(--vw) * 29, 19px));
-		color: var(--grey-light);
+		color: var(--grey-light-contras);
 		padding-right: 80px;
 		padding-right: 6vw;
 		
@@ -124,8 +129,8 @@
 			font-size: 13px; 
 		}
 		@media (max-width: 375px) {
-			line-height: min(19px, max(5vw, 10px)); 
-			font-size: min(13px, max(4vw, 10px)); 
+			line-height: 18px; 
+			font-size: 12px;
 		}
 	}
 	&__subcomment {
@@ -139,30 +144,38 @@
 		display: flex;
 		justify-content: space-between;
 		@media (max-width: 767px) {
-			padding-top: 50px;
 			padding-top: min(50px, max(14vw, 30px)); 
+		}
+		@media (max-width: 320px) {
+			flex-direction: column;
+			padding-top: 24px;
 		}
 	}
 	&__thumbnail {
 		display: flex;
 		align-items: center;
-		column-gap: min(17px, max(var(--vw) * 17, 12px));
 		position: relative;
 		width: 50%;
+		@media (max-width: 320px) {
+			margin-bottom: 12px;
+		}
 	}
 	&__icon {
 		width: min(65px, max(var(--vw) * 65, 46px));
 		height: min(65px, max(var(--vw) * 65, 46px));
 		object-fit: cover;
 		border-radius: 50%;
+		margin-right: min(17px, max(var(--vw) * 17, 12px));
 		@media (max-width: 1024px) {
 			width: min(46px, max(4.5vw, 33px));
 			height: min(46px, max(4.5vw, 33px));
 		}
+		@media (max-width: 375px) {
+			margin-right: 3.2vw;
+		}
 	}
 	&__user {
 		width: 100%;
-		row-gap: 0;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
@@ -171,10 +184,9 @@
 		margin: 0;
 		font-size: min(17px, max(var(--vw) * 17, 13px));
 		line-height: min(22px, max(var(--vw) * 22, 19px));
-		color: var(--grey-light);
+		color: var(--grey-light-contras);
 		@media (max-width: 1024px) {
 			padding-right: 8vw;
-			font-size: min(13px, max(1.8vw, 9px)); 
 			line-height: min(22px, max(2.2vw, 14px)); 
 		}
 	}
@@ -185,10 +197,7 @@
 		font-weight: 500;
 		color: var(--title);
 		@media (max-width: 1024px) {
-			// font-size: 18px; 
-			// font-size: 1.8vw;
-			font-size: min(18px, max(1.8vw, 9px));
-			// line-height: 2.5vw;
+			font-size: min(18px, max(1.8vw, 12px));
 			line-height: min(19px, 3vw);
 		}
 	}
@@ -200,7 +209,6 @@
 		font-size: min(19px, max(var(--vw) * 13, 19px));
 		line-height: min(30px, max(var(--vw) * 30, 21px));
 		@media (max-width: 1024px) {
-			font-size: min(18px, max(2vw, 11px));
 			line-height: max(21px, 3vw);
 		}
 	}
@@ -209,7 +217,7 @@
 		font-weight: 600;
 		font-size: min(31px, max(var(--vw) * 31, 22px));
 		line-height: min(27px, max(calc(var(--vw) * 27), 20px));
-		color: var(--grey-light);
+		color: var(--grey-light-contras);
 		padding-top: min(132px, max(calc(var(--vw) * 132), 94px));
 		padding-bottom: min(44px, max(calc(var(--vw) * 44), 31px));
 		@media (max-width: 375px) {
@@ -218,9 +226,7 @@
 	}
 	&__creator {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, clamp(153px, calc(var(--vw) * 215), 280px));
-		// grid-template-columns: repeat(auto-fit, 215px);
-		// grid-template-columns: repeat(5, auto);
+		grid-template-columns: repeat(auto-fit, min(280px, max(calc(var(--vw) * 280), 153px)));
 		grid-template-rows: auto;
 		column-gap:  min(42px, max(var(--vw) * 42, 30px));
 		row-gap:  min(42px, max(var(--vw) * 42, 30px));
@@ -236,12 +242,6 @@
 		}
 	}
 	&__wrap {
-		// width: min(215px, max(var(--vw) * 215, 153px));
-		// height: min(297px, max(var(--vw) * 297, 211px));
-
-		// width: clamp(153px, calc(var(--vw) * 215), 250px);
-		// height: clamp(211px, calc(var(--vw) * 297), 350px);
-
 		box-shadow: 0px 10px 47px 0px var(--grey-light);
 		border-radius: min(24px, max(16px, var(--vw)* 24));
 		@media (max-width: 767px) {
@@ -257,8 +257,7 @@
 
 			margin: 0;
 			font-weight: 700;
-			font-size: 14px;
-			font-size: min(14px, max(4vw, 12px));
+			font-size: min(20px, max(100vw/767 * 20, 13px));
 			line-height: min(21px, max(6vw, 18px));
 			font-style: normal;
 			letter-spacing: 0.12px;
@@ -268,13 +267,12 @@
 				content: "✔";
 				color: var(--white);
 				font-weight: 400;
-				font-size: 10px;
 				position: relative;
 				background-color: var(--blue);
 				border-radius: 50%;
-				width: 14px;
-				height: 14px;
-				margin-left: 6px;
+				width:  min(20px, max(100vw/767 * 20, 14px));
+				height: min(20px, max(100vw/767 * 20, 14px));
+				margin-left: 22px;
 				display: flex;
 				align-items: center;
 				justify-content: center;

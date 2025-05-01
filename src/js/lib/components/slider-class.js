@@ -5,7 +5,6 @@ export const CLASS_CONTROL_DISABLED = 'disabled';
 export default class SliderClass {
 	constructor({ selector = '', inner = '', slides = '', items = '', btnsNext = '', btnsPrev = '', indicators = ''} = {}) {
 		
-		
 		if (inner !== '') {
 				this.carousel = document.querySelector(selector);
 				this.inner = this.carousel.querySelector(inner); //experience__content
@@ -145,6 +144,7 @@ export default class SliderClass {
 	clickIndicators() {
 		try {
 			for (let i = 0; i < this.indicators.length; i++) {
+				
 				this.indicators[i].addEventListener('click', (e) => {
 					const slideTo = e.target.getAttribute('data-slide-to');
 					this.moveTo(slideTo);
@@ -196,6 +196,7 @@ export default class SliderClass {
 	clickPrev() {
 		if(this.btnsPrev){
 			this.btnsPrev.addEventListener('click', (e) => {
+				
 				e.preventDefault();
 				this.direction = e.target.dataset.slide;
 				this.move();

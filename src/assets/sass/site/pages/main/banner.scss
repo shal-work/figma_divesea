@@ -1,7 +1,8 @@
 .banner {
     padding-bottom: min(160px, max(calc(var(--vw) * 160), 113px));
     @media (max-width: 450px) {
-        padding-inline: 5vw;
+        padding-left: 5vw;
+        padding-right: 5vw;
         padding-bottom: 200px;
     }
     @media (max-width: 320px) {
@@ -13,15 +14,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-
-        @media (max-width: 920px) {
-            flex-direction: column;
-            
-        }
+        position: relative;
         @media (max-width: 767px) {
             flex-direction: column;
             height: 211px;
-            position: relative;
         }
         @media (max-width: 320px) {
             height: auto;
@@ -29,8 +25,7 @@
     }
 
     &__text {
-        padding-block: min(44px, max(calc(var(--vw) * 44), 32px));
-        padding-inline: min(66px, max(calc(var(--vw) * 66), 46px));
+        padding:  min(44px, max(calc(var(--vw) * 44), 32px)) min(66px, max(calc(var(--vw) * 66), 46px));
         @media (max-width: 767px) {
             padding: 21px;
         }
@@ -63,14 +58,15 @@
         font-size: min(20px, max(calc(var(--vw) * 20), 14px));
         line-height: min(59px, max(calc(var(--vw) * 59), 18px));
         letter-spacing: 1px;
-        color: var(--grey-light50);
+        // color: var(--grey-light50);
+        color: var(--grey-light50-contrast);
         padding-bottom: min(50px, max(calc(var(--vw) * 50), 35px));
         @media (max-width: 920px) {
             text-align: center;
         }
         @media (max-width: 767px) {
             text-align: center;
-            font-size: 10px;
+            font-size: 12px;
             line-height: 13px;
             padding-bottom: 25px;
         }
@@ -78,7 +74,6 @@
 
     &__btns {
         display: flex;
-        column-gap: min(30px, max(calc(var(--vw) * 30), 21px));
         @media (max-width: 920px) {
             justify-content: center;
         }
@@ -98,10 +93,11 @@
         font-size: min(21px, max(calc(var(--vw) * 21), 15px));
         line-height: min(27px, max(calc(var(--vw) * 27), 20px));
         letter-spacing: 1px;
-        padding-block: min(18px, max(calc(var(--vw) * 18), 12px));
-        padding-inline: min(27px, max(calc(var(--vw) * 27), 19px));
+ 
+        padding: min(18px, max(calc(var(--vw) * 18), 12px)) min(27px, max(calc(var(--vw) * 27), 19px));
+        margin-right: min(30px, max(calc(var(--vw) * 30), 21px)); 
         @media (max-width: 767px) {
-            font-size: 11px;
+            font-size: 12px;
             line-height: 14px;
         }
     }
@@ -114,22 +110,21 @@
 
         border-radius: 11px;
         overflow: hidden;
-        margin-inline: min(31px, max(calc(var(--vw) * 31), 22px));
-        margin-block: min(31px, max(calc(var(--vw) * 31), 22px));
+
+        margin: min(31px, max(calc(var(--vw) * 31), 22px)) min(31px, max(calc(var(--vw) * 31), 22px));
         box-shadow: 0px 9px 34px 1px var(--blur);
-        @media (max-width: 920px) {
+        @media (max-width: 767px) {
             position: absolute;
             top: 154px;
             width: 252px;
             height: 130px
         }
         @media (max-width: 320px) {
+            position: absolute;
             top: 100%;
             width: 100%;
         }
     }
-
-
     &__img {
         object-fit: cover;
         width: 100%;

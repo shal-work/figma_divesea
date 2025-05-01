@@ -2,8 +2,9 @@
     width: min(439px, max(calc(var(--vw) * 439), 312px));
     border-radius: min(21px, max(calc(var(--vw) * 21), 15px));
     border: 1px solid var(--title);
-    padding-block: min(40px, max(calc(var(--vw) * 40), 28px));
-    padding-inline:  min(21px, max(calc(var(--vw) * 21), 15px));
+
+    padding: min(40px, max(calc(var(--vw) * 40), 28px)) min(21px, max(calc(var(--vw) * 21), 15px));
+
     background-color: var(--white);
 
     display: block;
@@ -23,10 +24,10 @@
     }
     &__date {
         margin: 0;
-        font-size: min(15px, max(calc(var(--vw) * 15), 10px));
+        font-size: min(15px, max(calc(var(--vw) * 15), 12px));
         font-style: normal;
         line-height: min(18px, max(calc(var(--vw) * 18), 13px));
-        color: var(--grey-light);
+        color: var(--grey-light-contras);
     }
     &__column {
         display: flex;
@@ -65,11 +66,12 @@
             position: absolute;
             right: max(-10px, min(var(--vw) * -10, -5px));
             font-weight: 400;
-            font-size: min(11px, max(var(--vw) * 11, 8px));
+            font-size: 12px;
             font-style: normal;
             line-height: min(17px, max(var(--vw) * 17, 12px));
             top: 0;
             right: -4px;
+            z-index: 10;
         }
     }
     &__fieldset {
@@ -93,10 +95,7 @@
         line-height: 21px;
         color: var(--white);
         background-color: var(--title);
-        // padding-block: 14px;
-        // padding-inline: 32px;
-        padding-block: min(14px, max(var(--vw)* 14, 7px));
-        padding-inline: min(32px, max(var(--vw)* 32, 22px));
+        padding: min(14px, max(var(--vw)* 14, 7px)) min(32px, max(var(--vw)* 32, 22px));
         appearance: none;
  
         background-image: url("./assets/img/check.svg");
@@ -107,7 +106,7 @@
     }
     &__option {
         font-weight: 600;
-        font-size: min(12px, max(var(--vw) * 12, 10px));
+        font-size: 12px;
         line-height: 21px;
     }
     &__bid {
@@ -120,9 +119,7 @@
     }
     &__btn {
         margin: 0;
-        padding-block: min(11px, max(var(--vw) * 11, 9px));
-		padding-inline: min(57px, max(var(--vw) * 57, 19px));
-		padding-inline: 20px;
+		padding: min(11px, max(var(--vw) * 11, 9px)) 20px;
         border-radius: min(14px, max(var(--vw)* 14, 7px));
         // width: 100%;
     }
@@ -144,8 +141,7 @@
     width: min(344px, max(calc(var(--vw) * 344), 244px));
     border-radius: min(21px, max(calc(var(--vw) * 21), 15px));
     border: 1px solid var(--title);
-    padding-block: min(36px, max(calc(var(--vw) * 36), 25px));
-    padding-inline:  min(20px, max(calc(var(--vw) * 20), 14px));
+    padding: min(36px, max(calc(var(--vw) * 36), 25px))  min(20px, max(calc(var(--vw) * 20), 14px));
     background-color: var(--white);
     position: relative;
     top: auto;
@@ -154,18 +150,18 @@
     &__title {
         margin: 0;
         font-weight: 600;
-        font-size: min(15px, max(calc(var(--vw) * 15), 10px));
+        font-size: min(15px, max(calc(var(--vw) * 15), 12px));
         line-height: min(22px, max(calc(var(--vw) * 22), 15px));
         color: var(--title);
     }
     &__date {
         margin: 0;
-        font-size: min(11px, max(calc(var(--vw) * 11), 8px));
+        font-size: 12px;
         line-height: min(14px, max(calc(var(--vw) * 18), 9px));
-        color: var(--grey-light);
+        color: var(--grey-light-contras);
     }
     &__name {
-        font-size: min(12px, max(var(--vw)* 12, 9px));
+        font-size: 12px;
         line-height: min(19px, max(var(--vw)* 19, 14px));
     }
     &__btn {

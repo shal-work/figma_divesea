@@ -1,15 +1,13 @@
 .community {
-	opacity: 0;
-    display: none;
+	opacity: 1;
+    display: flex;
 	flex-direction: column;
 	justify-content: center;
     align-items: center;
 	position: relative;
 	--orbit-b: min(1061px, max(var(--vw) * 1061, 754px));
 	--orbit-m: min(831px, max(var(--vw) * 831, 590px));
-	
 	overflow-x: hidden;
-
 	padding-bottom: min(261px, max(calc(var(--vw) * 261), 186px));
 	padding-top: min(30px, max(var(--vw) * 30, 20px));
 	
@@ -26,16 +24,12 @@
 
 	&__grid {
 		display: grid;
-		// display: flex;
 		place-items: center;
-		// min-height: 100vh;
 		margin: 0;
-		overflow: clip;
+		// overflow: clip;
 		width: var(--orbit-b);
 		height: var(--orbit-b);
-		@media screen {
-			
-		}
+		position: relative;
 	}
 	&__text {
 		display: flex;
@@ -66,7 +60,7 @@
 	}
 
 	&__title-grey {
-		color: var(--grey-light);
+		color: var(--grey-light-contrast);
 	}
 
 	&__comment {
@@ -77,11 +71,9 @@
 		font-style: normal;
 		letter-spacing: normal;
 		text-align: center;
-		padding-block: 31px 49px;
 		padding-top: min(31px, max(calc(var(--vw) * 31), 22px));
 		padding-bottom: min(49px, max(calc(var(--vw) * 49), 34px));
 		@media (max-width: 767px) {
-			font-size: 8px;
 			line-height: 16px;
 			padding-top: 14px;
 			padding-bottom: 23px;
@@ -122,6 +114,9 @@
 		translate: var(--x) var(--y);
 		will-change: transform;
 		animation: revolve1 70s linear infinite;
+		@supports (-webkit-touch-callout: default ) {
+			transform: translate(calc(cos(pi/180 * 300) * 380px), sin(pi/180 * 300) * 380px);
+		}
 	}
 	&__rectangle-2 {
 		position: absolute;
@@ -132,6 +127,9 @@
 		translate: var(--x) var(--y);
 		will-change: transform;
 		animation: revolve2 85s linear infinite;
+		@supports (-webkit-touch-callout: default ) {
+			transform: translate(calc(cos(pi/180 * 330) * 380px), sin(pi/180 * 330) * 380px);
+		}
 	}
 	&__rectangle-3 {
 		position: absolute;
@@ -141,7 +139,10 @@
 		--y: calc(sin(var(--angle)) * var(--amplitude));
 		translate: var(--x) var(--y);
 		will-change: transform;
-		animation: revolve6 90s linear infinite;
+		animation: revolve3 90s linear infinite;
+		@supports (-webkit-touch-callout: default ) {
+			transform: translate(calc(cos(pi/180 * 90) * 380px), sin(pi/180 * 90) * 380px);
+		}
 	}
 	&__rectangle-4 {
 		position: absolute;
@@ -152,6 +153,9 @@
 		translate: var(--x) var(--y);
 		will-change: transform;
 		animation: revolve4 75s linear infinite;
+		@supports (-webkit-touch-callout: default ) {
+			transform: translate(calc(cos(pi/180 * 135) * 380px), sin(pi/180 * 135) * 380px);
+		}
 	}
 	&__rectangle-5 {
 		position: absolute;
@@ -162,6 +166,9 @@
 		translate: var(--x) var(--y);
 		will-change: transform;
 		animation: revolve5 80s linear infinite;
+		@supports (-webkit-touch-callout: default ) {
+			transform: translate(calc(cos(pi/180 * 225) * 380px), sin(pi/180 * 225) * 380px);
+		}
 	}
 	&__rectangle-6 {
 		position: absolute;
@@ -172,6 +179,9 @@
 		translate: var(--x) var(--y);
 		will-change: transform;
 		animation: revolve6 65s 0.5ms linear infinite;
+		@supports (-webkit-touch-callout: default ) {
+			transform: translate(calc(cos(pi/180 * 285) * 295px), sin(pi/180 * 285) * 295px);
+		}
 	}
 	&__rectangle-7 {
 		position: absolute;
@@ -182,6 +192,9 @@
 		translate: var(--x) var(--y);
 		will-change: transform;
 		animation: revolve7 65s 0.5ms linear infinite;
+		@supports (-webkit-touch-callout: default ) {
+			transform: translate(calc(cos(pi/180 * 15) * 295px), sin(pi/180 * 15) * 295px);
+		}
 	}
 	&__rectangle-8 {
 		position: absolute;
@@ -192,6 +205,9 @@
 		translate: var(--x) var(--y);
 		will-change: transform;
 		animation: revolve8 65s 0.5ms linear infinite;
+		@supports (-webkit-touch-callout: default ) {
+			transform: translate(calc(cos(pi/180 * 45) * 295px), sin(pi/180 * 45) * 295px);
+		}
 	}
 	&__rectangle-9 {
 		position: absolute;
@@ -202,11 +218,16 @@
 		translate: var(--x) var(--y);
 		will-change: transform;
 		animation: revolve9 65s 0.5ms linear infinite;
+		@supports (-webkit-touch-callout: default ) {
+			transform: translate(calc(cos(pi/180 * 200) * 295px), sin(pi/180 * 200) * 295px);
+		}
 	}
 	&__icon {
 		width: min(51px, max(var(--vw) * 51, 36px));
+		height: min(51px, max(var(--vw) * 51, 36px));
 		@media (max-width: 375px) {
 			width: 6.7vw;
+			height: 6.7vw;
 		}
 	}
 }
@@ -216,6 +237,7 @@
     inherits: true;
     initial-value: 0deg;
   }
+
 
 @keyframes revolve1 {
 	from { --angle: -60deg; }

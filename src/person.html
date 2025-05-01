@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Molenhauer by figma</title>
-    <meta name="descriptin" content="Сайт по макерту Figma">
+    <meta name="description" content="Сайт по макерту Figma">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,19 +19,23 @@
         'sell-bold': '',
         'stats-bold': '',
     })
-    <main class="main">
+    <main class="main ">
         <section class="person container">
             <h1 class="visually-hidden">DiveSea web-site for verstaem.online</h1>
             <h2 class="visually-hidden">Page person</h2>
-            <div class="person__picture">
-                <img class="person__img" src="assets/img/rectangle_3.png" alt="rectangle_3.png">
-            </div>
+            <picture class="person__picture">
+                <source type="image/webp" srcset="assets/img/rectangle_3_618_404.webp" media="(max-width: 412px)">
+                <source type="image/png" srcset="assets/img/rectangle_3_618_404.png" media="(max-width: 412px)">
+                <source type="image/webp" srcset="assets/img/rectangle_3_1247.webp"  media="(max-width: 1024px)">
+                <source type="image/png" srcset="assets/img/rectangle_3_1247.png" media="(max-width: 1024px)">
+                <source type="image/webp" srcset="assets/img/rectangle_3_1728.webp">
+                <img class="person__img" src="assets/img/rectangle_3_1728.png" alt="rectangle_3.png"  width="1728" height="355">
+            </picture>
             <div class="person__profile">
                 <div class="person__item person__profile-text">
                     <div class="person__block-photo">
                         <div class="person__photo-picture">
                             <img class="person__photo-icon" src="assets/img/photo.png" alt="photo.png">
-                            <div class="person__check"></div>
                         </div>
                         <div class="person__block-user">
                             <div class="user person__user">
@@ -63,28 +67,28 @@
                     </div>
                     <ul class="person__social">
                         <li class="person__icon">
-                            <a href="#" class="person__icon">
+                            <a href="#" class="person__icon" aria-label="social Instagram">
                                 <svg class="icon zoom-hover person__icon">
                                     <use xlink:href="assets/img/spriteStyle.svg#Instagram"></use>
                                 </svg>
                             </a>
                         </li>
                         <li class="person__icon">
-                            <a href="#" class="person__icon">
+                            <a href="#" class="person__icon" aria-label="social linkedin">
                                 <svg class="icon zoom-hover person__icon">
                                     <use xlink:href="assets/img/spriteStyle.svg#linkedin"></use>
                                 </svg>
                             </a>
                         </li>
                         <li class="person__icon">
-                            <a href="#" class="person__icon">
+                            <a href="#" class="person__icon" aria-label="social Facebook">
                                 <svg class="icon zoom-hover person__icon">
                                     <use xlink:href="assets/img/spriteStyle.svg#Facebook"></use>
                                 </svg>
                             </a>
                         </li>
                         <li class="person__icon">
-                            <a href="#" class="person__icon person__icon">
+                            <a href="#" class="person__icon person__icon" aria-label="social Twitter">
                                 <svg class="icon zoom-hover person__icon">
                                     <use xlink:href="assets/img/spriteStyle.svg#Twitter"></use>
                                 </svg>
@@ -101,29 +105,23 @@
                         </div>
                         <div class="person__tab-content tab__content tab__content--active" role="tabpanel" id="collection" aria-labelledby="tab-collection" tabindex="0">
                             <div class="person__grid">
-                                @@include('html/blocks/card-small.html', 
-                                {'picture': '<img class="card__img" src="assets/img/rectangle_1.png" alt="rectangle_1.png">', 'name': 'Sun-Glass','class':'btn-card-person'})
-                                @@include('html/blocks/card-small.html', 
-                                {'picture': '<img class="card__img" src="assets/img/rectangle_2.png" alt="rectangle_2.png">', 'name': 'Sun-Glass','class':'btn-card-person'})
-                                @@include('html/blocks/card-small.html', 
-                                {'picture': '<img class="card__img" src="assets/img/rectangle_3.png" alt="rectangle_3.png">', 'name': 'Sun-Glass','class':'btn-card-person'})
-                                @@include('html/blocks/card-small.html', 
-                                {'picture': '<img class="card__img" src="assets/img/rectangle_4.png" alt="rectangle_4.png">', 'name': 'NuEvey','class':'btn-card-person'})
-                                @@include('html/blocks/card-small.html',
-                                {'picture': '<img class="card__img" src="assets/img/rectangle_5.png" alt="rectangle_5.png">', 'name': 'NuEvey','class':'btn-card-person'})
-                                @@include('html/blocks/card-small.html', 
-                                {'picture': '<img class="card__img" src="assets/img/rectangle_1.png" alt="rectangle_1.png">', 'name': 'Sun-Glass','class':'btn-card-person'})
+                                @@include('html/blocks/card-small.html', {'picture': 'rectangle_1_162', 'name': 'Sun-Glass'})
+                                @@include('html/blocks/card-small.html', {'picture': 'rectangle_2_162', 'name': 'Sun-Glass'})
+                                @@include('html/blocks/card-small.html', {'picture': 'rectangle_3_162', 'name': 'Sun-Glass'})
+                                @@include('html/blocks/card-small.html', {'picture': 'rectangle_4_162', 'name': 'NuEvey'})
+                                @@include('html/blocks/card-small.html', {'picture': 'rectangle_5_162', 'name': 'NuEvey'})
+                                @@include('html/blocks/card-small.html', {'picture': 'rectangle_1_162', 'name': 'Sun-Glass'})
                             </div>
                         </div>
                         <div class="tab__content" role="tabpanel" id="activity" aria-labelledby="tab-activity">
                             <div class="person__column">
                                 <div class="person__row">
-                                    <select class="person__select  person__icon-cart" name="sales">
-                                        <option class="person__option" value="Sales" selected>Sales</option>
+                                    <select class="person__select  person__icon-cart" name="sales" aria-label="sales">
+                                        <option class="person__option" value="" selected>Sales</option>
                                         <option class="person__option"  value="Sales1">Sales1</option>
                                     </select>
-                                    <select class="person__select person__icon-chain" name="chains">
-                                        <option class="person__option" value="All Chains" selected>All Chains</option>
+                                    <select class="person__select person__icon-chain" name="chains" aria-label="chains">
+                                        <option class="person__option" value="" selected>All Chains</option>
                                         <option class="person__option"  value="Chains">Chains</option>
                                     </select>
                                 </div>
@@ -131,7 +129,7 @@
                                     <div class="person__wrap accordion">
                                         <div class="person__card"> 
                                             <div class="person__thumbnail">
-                                                <img class="person__thumbnail-icon" src="assets/img/rectangle_5.png" alt="rectangle_5.png">
+                                                <img class="person__thumbnail-icon" src="assets/img/rectangle_5_44.png" alt="rectangle_5.png" width="65" height="65">
                                                 <div class="user person__user">
                                                     <p class="user-name person__thumbnail-name">NeuVey</p>
                                                     <p class="user-nickname person__thumbnail-nickname">JenifferS</p>
@@ -141,12 +139,12 @@
                                                 <div class="person__vector">
                                                     <p class="person__cap">Sale</p>
                                                     <p class="action-vector">16,4</p>
-                                                    <p class="person__lower">6 Minutes ago</p>
+                                                    <p class="person__lower text-nobreak">6 Minutes ago</p>
                                                 </div>
-                                                <button type="button" class="person__accordion accordion__btn"></button>
+                                                <button type="button" class="person__accordion accordion__btn" aria-controls="rectangle_5" aria-label="Раскрыть"></button>
                                             </div>
                                         </div>
-                                        <div class="person__list accordion__content">
+                                        <div class="person__list accordion__content" id="rectangle_5">
                                             <div class="person__list-item">
                                                 <p class="person__explanation">USD Price</p>
                                                 <p class="person__lost-value">$19K</p>
@@ -171,7 +169,7 @@
                                     <div class="person__wrap accordion">
                                         <div class="person__card"> 
                                             <div class="person__thumbnail">
-                                                <img class="person__thumbnail-icon" src="assets/img/rectangle_2.png" alt="rectangle_2.png">
+                                                <img class="person__thumbnail-icon" src="assets/img/rectangle_2_44.png" alt="rectangle_2.png" width="65" height="65">
                                                 <div class="user person__user">
                                                     <p class="user-name person__thumbnail-name">NeuVey</p>
                                                     <p class="user-nickname person__thumbnail-nickname">JenifferS</p>
@@ -181,12 +179,12 @@
                                                 <div class="person__vector">
                                                     <p class="person__cap">Sale</p>
                                                     <p class="action-vector">16,4</p>
-                                                    <p class="person__lower">6 Minutes ago</p>
+                                                    <p class="person__lower text-nobreak">6 Minutes ago</p>
                                                 </div>
-                                                <button type="button" class="person__accordion accordion__btn"></button>
+                                                <button type="button" class="person__accordion accordion__btn" aria-controls="rectangle_2" aria-label="Раскрыть"></button>
                                             </div>
                                         </div>
-                                        <div class="person__list accordion__content">
+                                        <div class="person__list accordion__content" id="rectangle_2">
                                             <div class="person__list-item">
                                                 <p class="person__explanation">USD Price</p>
                                                 <p class="person__lost-value">$19K</p>

@@ -15,10 +15,11 @@
                              "copyright social";
         width: 100%;
         row-gap: 25px;
-        padding-inline: 32px;
+        padding-left: 32px;
+        padding-right: 32px;
         @media (max-width: 767px) {
             grid-template-areas: "logo social"
-                                "menu ."
+                                "menu menu"
                                 "copyright copyright";
             margin: 0 auto;
         } 
@@ -28,7 +29,8 @@
                         "menu "
                         "copyright";
             margin: 0 auto;
-            padding-inline: 7vw;
+            padding-left: 7vw;
+            padding-right: 7vw;
         } 
     }
     &__logo {
@@ -42,12 +44,10 @@
         color:var(--grey-light);
         z-index: 1;
     }
-
     &__name {
         margin: 0;
         color: var(--white);
     }
-
     &__menu {
         padding: 0;
         margin: 0;
@@ -55,23 +55,24 @@
         @media (max-width: 767px) {
             align-items: flex-start;
         }
-        
     }
-
     &__text {
         margin: 0;
-        color:var(--grey-light50);
+        color:var(--grey-light50-contrast);
         &:hover {
-            color:var(--white);
+            color:var(--grey-light50-contrast);
         }
     }
-
     &__icon {
         display: flex;
         list-style: none;
-
         margin: 0;
         padding: 0;
+        margin-right: min(3.5vw, calc(var(--vw) * 33  + 20px));
+        color:var(--grey-light50-contrast);
+        @media (max-width: 767px) {
+            margin: 0;
+        }
     }
     &__copyright {
         margin: 0;
@@ -82,7 +83,6 @@
             padding-top: 26px;
             text-align: center;
         }
-
     }
     &__social {
         margin: 0;
@@ -102,8 +102,9 @@
 }
 
 .icon {
-    fill: var(--grey-light50);
+    fill: var(--grey-light50-contrast);
     width: 21px;
+    height: 21px;
     aspect-ratio: 1/1;
 }
 .zoom-hover {
@@ -116,7 +117,6 @@
         transform: scale(1.1);
     }
 }
-
 
 .footer__text.underline-anime {
     padding-bottom: 2px;

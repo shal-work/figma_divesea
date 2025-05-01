@@ -1,7 +1,11 @@
 <div class="card">
     <div class="card__picture">
-        @@picture
+        <picture>
+            <source srcset="assets/img/@@picture.webp" type="image/webp">
+            <img class="card__img" src="assets/img/@@picture.png" alt="weekly @@picture.png" width="255" height="255">
+        </picture>
     </div>
+
     <div class="card__block">
         <p class="card__time">07h 09m 12s</p>
     </div>
@@ -12,7 +16,9 @@
                 <p class="card__comment">Current bid</p>
                 <div class="action-vector">1.75</div>
             </div>
-           <a href="discover-product.html" class="btn btn-card text-nobreak text-uppercase @@class">PLACE BID</a>
+            <a href="discover-product.html" class="btn btn-card text-nobreak text-uppercase @@class">PLACE BID</a>
         </div>
     </div>
 </div>
+
+

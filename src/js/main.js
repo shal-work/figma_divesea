@@ -1,5 +1,6 @@
 'use strict';
-import $ from './lib/lib';
+// import $ from './lib/lib';
+import './lib/lib';
 import './lib/site/main.js';
 // import './lib/site/map.js';
 

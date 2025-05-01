@@ -10,6 +10,8 @@ const autoprefixer = require('gulp-autoprefixer');//расстанока пре�
 const csso = require('gulp-csso');//минификация css
 const webpcss = require("gulp-webp-css");//конвертация в .wepb картинок в style.css
 const groupMedia = require('gulp-group-css-media-queries'); //группировка CSS @media в один блок
+const sourcemaps = require('gulp-sourcemaps'); // Вар-4 sass + sourcemaps (исходные карты)
+
 
 const browsersync = require("browser-sync"); // вместо сервра, сдалал как раньше в Модуле10
 
@@ -68,21 +70,34 @@ gulp.task('sass:docs', () => {
     return gulp.src('./src/assets/sass/*.scss')
                 .pipe(changed(docs))
                 .pipe(plumber(plumberNotify('Styles')))
-                // .pipe(sourcemaps.init()) - отказался
+                .pipe(sourcemaps.init())
                 .pipe(sass().on('error', sass.logError))
-                // .pipe(sourcemaps.write()) - отказался
                 .pipe(autoprefixer())//расстанока префиксов стилей для старых барузеров
                 .pipe(groupMedia()) //группировка CSS @media в один блок
-                .pipe(webpcss()) //конвертация в .wepb картинок в style.css
+                // .pipe(webpcss()) //конвертация в .wepb картинок в style.css
                 .pipe(csso()) //минификация css
+                .pipe(sourcemaps.write('./maps'))
                 .pipe(gulp.dest(docs))
                 .pipe(browsersync.stream());
-
 });
+
+// gulp.task('copy-img:docs', function ()  {
+//   return gulp
+//     .src('./src/assets/img/**/*', { encoding: false })// берем исходники-картинки в src Имена с маленькой буквы
+//       .pipe(changed(docs + '/assets/img')) //если картинки изменились идем дальше, если нет пропускаем все
+//       .pipe(webp()) //обарабатываем картинки делаем webp
+//       .pipe(gulp.dest(docs + '/assets/img'))//сохраняем картинки
+//       //второй этап
+//       .pipe(gulp.src('./src/assets/img/**/*', { encoding: false }))//опять берем исходники-картинки в src Имена с маленькой буквы
+//       .pipe(changed(docs + '/assets/img')) //если картинки изменились идем дальше, если нет пропускаем все
+//       .pipe(imagemin({verbose: true})) //минимизируем картинки
+//       .pipe(gulp.dest(docs + '/assets/img'))
+//       .pipe(browsersync.stream());
+// });
 
 gulp.task('copy-img:docs', function ()  {
   return gulp
-    .src('./src/assets/img/**/*', { encoding: false })// берем исходники-картинки в src Имена с маленькой буквы
+    .src(['./src/assets/img/**/*', '!./src/assets/img/**/*.webp'], { encoding: false })// берем исходники-картинки в src Имена с маленькой буквы
       .pipe(changed(docs + '/assets/img')) //если картинки изменились идем дальше, если нет пропускаем все
       .pipe(webp()) //обарабатываем картинки делаем webp
       .pipe(gulp.dest(docs + '/assets/img'))//сохраняем картинки
@@ -158,4 +173,3 @@ gulp.task('server-docs', () => {
 });
 
 gulp.task( 'build-docs', gulp.parallel('copy-fonts:docs', 'html:docs', 'sass:docs', 'copy-img:docs','js:docs', 'copy-favicon:docs'));
-
